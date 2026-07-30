@@ -1,0 +1,20 @@
+Medical-operations-solo/
+├── app.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+├── data/
+│   ├── raw/
+│   └── processed/
+├── modules/
+│   ├── __init__.py
+│   ├── data_integration.py
+│   ├── patient_flow.py
+│   ├── resource_utilization.py
+│   └── geo_dashboard.py
+├── utils/
+│   ├── __init__.py
+│   ├── data_processing.py
+│   └── visualizations.py
+└── assets/
+    └── style.css
