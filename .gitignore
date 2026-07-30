@@ -1,0 +1,7 @@
+data/processed/*.db
+data/processed/*.csv
+__pycache__/
+.venv/
+.vscode/
+.DS_Store
+*.pyc
