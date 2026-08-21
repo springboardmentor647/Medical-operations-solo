@@ -11,25 +11,24 @@ def inspect():
 
     conn = sqlite3.connect(db_path)
     
-    tables = ['rooms', 'patients']
+    # Updated list of all tables in your master schema
+    tables = ['departments', 'room_types', 'rooms', 'beds', 'patients', 'staff', 'operational_events']
     
     for table in tables:
         print(f"\n{'='*20} TABLE: {table.upper()} {'='*20}")
         
-        # Get column info
-        cols = pd.read_sql(f"PRAGMA table_info({table})", conn)
-        print("COLUMNS:")
-        print(cols[['name', 'type']])
-        
-        # Get data preview
-        df = pd.read_sql(f"SELECT * FROM {table} LIMIT 5", conn)
-        print("\nPREVIEW (First 5 rows):")
-        print(df.head())
-        
-        # Get counts of unique statuses or wards if applicable
-        if table == 'rooms':
-            print("\nSTATUS DISTRIBUTION:")
-            print(pd.read_sql(f"SELECT status, count(*) FROM {table} GROUP BY status", conn))
+        try:
+            # Get column info
+            cols = pd.read_sql(f"PRAGMA table_info({table})", conn)
+            print("COLUMNS:")
+            print(cols[['name', 'type']])
+            
+            # Get data preview
+            df = pd.read_sql(f"SELECT * FROM {table} LIMIT 5", conn)
+            print("\nPREVIEW (First 5 rows):")
+            print(df.head())
+        except Exception as e:
+            print(f"Could not read table {table}: {e}")
             
     conn.close()
 

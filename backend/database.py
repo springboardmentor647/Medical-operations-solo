@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
+# Use an absolute path that is consistent across all scripts
 DB_DIR = r"D:\INTERNSHIP\7TH SEM\INFOSYS SPRINGBOARD\APP\data"
 DB_PATH = os.path.join(DB_DIR, "hospital_blueprint.db")
 SQLALCHEMY_DATABASE_URL = f"sqlite:///{DB_PATH}"
@@ -10,6 +11,7 @@ SQLALCHEMY_DATABASE_URL = f"sqlite:///{DB_PATH}"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
+
 
 class Department(Base):
     __tablename__ = "departments"
@@ -51,14 +53,19 @@ class Patient(Base):
     city = Column(String)
     state = Column(String)
 
-class Admission(Base):
-    __tablename__ = "admissions"
-    admission_id = Column(Integer, primary_key=True)
-    patient_id = Column(String, ForeignKey("patients.patient_id"))
-    admission_date = Column(DateTime)
-    admission_type = Column(String)
+class Staff(Base):
+    __tablename__ = "staff"
+    staff_id = Column(Integer, primary_key=True)
+    staff_name = Column(String)
+    role = Column(String)
     department_id = Column(Integer, ForeignKey("departments.department_id"))
-    status = Column(String)
+
+class StaffAssignment(Base):
+    __tablename__ = "staff_assignments"
+    assignment_id = Column(Integer, primary_key=True)
+    staff_id = Column(Integer, ForeignKey("staff.staff_id"))
+    department_id = Column(Integer, ForeignKey("departments.department_id"))
+    shift = Column(String)
 
 class OperationalEvent(Base):
     __tablename__ = "operational_events"
@@ -70,6 +77,3 @@ class OperationalEvent(Base):
 
 def init_db():
     Base.metadata.create_all(bind=engine)
-
-if __name__ == "__main__":
-    init_db()
