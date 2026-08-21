@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@layer base {
+  body { 
+    @apply bg-slate-50 text-slate-900 antialiased; 
+  }
+}
+@layer components {
+  .card-panel { 
+    @apply bg-white border border-slate-200 shadow-sm rounded-xl p-6; 
+  }
+}

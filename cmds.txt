@@ -1,0 +1,4 @@
+pip install -r backend/requirements.txt
+
+root - uvicorn backend.main:app --reload --reload-dir backend
+cd frontend - npm run dev

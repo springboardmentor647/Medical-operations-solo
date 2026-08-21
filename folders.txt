@@ -1,0 +1,41 @@
+APP/
+├── .gitignore
+├── requirements.txt
+├── Documentation.docx
+├── README.md
+├── data/
+│   ├── raw/
+│   └── hospital_blueprint.db
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── __init__.py
+│   ├── services/
+│   │   ├── event_handler.py
+│   │   └── analytics_engine.py
+│   └── scripts/
+│       ├── seed_data.py
+│       └── migrate_schema.py
+└── frontend/
+    ├── package.json
+    ├── tailwind.config.js
+    ├── postcss.config.js
+    ├── src/
+    │   ├── App.jsx
+    │   ├── main.jsx
+    │   ├── index.css
+    │   ├── components/
+    │   │   ├── Sidebar.jsx
+    │   │   ├── MetricsCard.jsx
+    │   │   ├── FloorTable.jsx
+    │   │   ├── Blueprint.jsx
+    │   │   └── InfoTooltip.jsx
+    │   ├── pages/
+    │   │   ├── Dashboard.jsx
+    │   │   ├── FloorManagement.jsx
+    │   │   └── Analytics.jsx
+    │   ├── hooks/
+    │   │   └── useHospitalData.js
+    │   └── context/
+    │       └── HospitalContext.jsx
