@@ -1,0 +1,12 @@
+data/hospital_blueprint.db
+data/processed/*.csv
+data/processed/*.db
+backend/scripts/
+backend/inspect_db.py
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.DS_Store
+node_modules/
+dist/
