@@ -111,8 +111,8 @@ export default function Analytics() {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={departments} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                <XAxis dataKey="department_code" stroke="#94a3b8" fontSize={11} tickLine={false} />
-                <YAxis stroke="#94a3b8" fontSize={11} tickLine={false} />
+                <XAxis dataKey="department_code" stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} />
+                <YAxis stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '0.5rem', color: '#fff', fontSize: '12px' }}
                 />
@@ -135,8 +135,8 @@ export default function Analytics() {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={roomTypes} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                <XAxis dataKey="room_type_name" stroke="#94a3b8" fontSize={11} tickLine={false} />
-                <YAxis stroke="#94a3b8" fontSize={11} tickLine={false} unit="%" domain={[0, 100]} />
+                <XAxis dataKey="room_type_name" stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} />
+                <YAxis stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} unit="%" domain={[0, 100]} />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '0.5rem', color: '#fff', fontSize: '12px' }}
                   formatter={(val) => [`${val}%`, 'Utilization']}
@@ -152,7 +152,7 @@ export default function Analytics() {
         <div className="bg-white border border-slate-200/80 p-6 rounded-xl shadow-xs">
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-1">Global Resource Status</h2>
           <p className="text-xs text-slate-500 mb-4">Institutional infrastructure distribution</p>
-          <div className="h-64 w-full">
+          <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -176,7 +176,7 @@ export default function Analytics() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-white border border-slate-200/80 p-6 rounded-xl shadow-xs">
+        <div className="lg:col-span-2 bg-white border border-slate-200/80 p-6 rounded-xl shadow-xs flex flex-col justify-between">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
             <div>
               <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Clinical Diagnostic Volume</h2>
@@ -195,16 +195,28 @@ export default function Analytics() {
               </select>
             </div>
           </div>
-          <div className="h-64 w-full">
+          <div className="h-96 w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={filteredDiagnostics} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                <XAxis dataKey="diagnosis_name" stroke="#94a3b8" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" height={45} />
-                <YAxis stroke="#94a3b8" fontSize={11} tickLine={false} />
+              <BarChart 
+                data={filteredDiagnostics} 
+                layout="vertical"
+                margin={{ top: 10, right: 30, left: 40, bottom: 10 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+                <XAxis type="number" stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} />
+                <YAxis 
+                  dataKey="diagnosis_name" 
+                  type="category" 
+                  stroke="#0f172a" 
+                  fontSize={11} 
+                  fontWeight={600} 
+                  tickLine={false} 
+                  width={180}
+                />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '0.5rem', color: '#fff', fontSize: '12px' }}
                 />
-                <Bar dataKey="total_cases" fill="#0284c7" name="Total Admissions" radius={[4, 4, 0, 0]} barSize={20} />
+                <Bar dataKey="total_cases" fill="#0284c7" name="Total Admissions" radius={[0, 4, 4, 0]} barSize={16} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -230,16 +242,28 @@ export default function Analytics() {
             </select>
           </div>
         </div>
-        <div className="h-72 w-full">
+        <div className="h-80 w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={filteredServices} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-              <XAxis dataKey="service_name" stroke="#94a3b8" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" height={45} />
-              <YAxis stroke="#94a3b8" fontSize={11} tickLine={false} />
+            <BarChart 
+              data={filteredServices} 
+              layout="vertical"
+              margin={{ top: 10, right: 30, left: 40, bottom: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+              <XAxis type="number" stroke="#0f172a" fontSize={11} fontWeight={600} tickLine={false} />
+              <YAxis 
+                dataKey="service_name" 
+                type="category" 
+                stroke="#0f172a" 
+                fontSize={11} 
+                fontWeight={600} 
+                tickLine={false} 
+                width={220}
+              />
               <Tooltip 
                 contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '0.5rem', color: '#fff', fontSize: '12px' }}
               />
-              <Bar dataKey="demand_count" fill="#0d9488" name="Procedures Rendered" radius={[4, 4, 0, 0]} barSize={22} />
+              <Bar dataKey="demand_count" fill="#0d9488" name="Procedures Rendered" radius={[0, 4, 4, 0]} barSize={18} />
             </BarChart>
           </ResponsiveContainer>
         </div>

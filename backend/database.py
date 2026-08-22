@@ -5,7 +5,7 @@ from sqlalchemy import (
     ForeignKey, Boolean, event, text
 )
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.engine import Engine
 
 DB_DIR = r"D:\INTERNSHIP\7TH SEM\INFOSYS SPRINGBOARD\APP\data"
@@ -173,7 +173,10 @@ class OperationalEvent(Base):
 def create_views():
     views = [
         """
-        CREATE VIEW IF NOT EXISTS v_hospital_overview AS
+        DROP VIEW IF EXISTS v_hospital_overview;
+        """,
+        """
+        CREATE VIEW v_hospital_overview AS
         SELECT 
             (SELECT COUNT(*) FROM beds) AS total_beds,
             (SELECT COUNT(*) FROM beds WHERE status = 'Occupied') AS occupied_beds,
@@ -187,7 +190,10 @@ def create_views():
                    NULLIF((SELECT COUNT(*) FROM beds), 0)) * 100, 2) AS occupancy_rate;
         """,
         """
-        CREATE VIEW IF NOT EXISTS v_floor_summary AS
+        DROP VIEW IF EXISTS v_floor_summary;
+        """,
+        """
+        CREATE VIEW v_floor_summary AS
         SELECT 
             r.floor AS floor,
             COUNT(b.bed_id) AS total_beds,
@@ -202,49 +208,49 @@ def create_views():
         GROUP BY r.floor;
         """,
         """
-        CREATE VIEW IF NOT EXISTS v_department_metrics AS
+        DROP VIEW IF EXISTS v_department_metrics;
+        """,
+        """
+        CREATE VIEW v_department_metrics AS
         SELECT 
             d.department_id,
             d.department_name,
             d.department_code,
             d.capacity AS nominal_capacity,
-            COUNT(DISTINCT r.room_id) AS total_rooms,
-            COUNT(DISTINCT b.bed_id) AS total_beds,
-            SUM(CASE WHEN b.status = 'Occupied' THEN 1 ELSE 0 END) AS occupied_beds,
-            SUM(CASE WHEN b.status = 'Available' THEN 1 ELSE 0 END) AS available_beds,
-            COUNT(DISTINCT doc.doctor_id) AS doctor_count,
-            COUNT(DISTINCT st.staff_id) AS staff_count,
-            COUNT(DISTINCT CASE WHEN a.status = 'Active' THEN a.admission_id END) AS active_patient_load,
-            ROUND((CAST(SUM(CASE WHEN b.status = 'Occupied' THEN 1 ELSE 0 END) AS FLOAT) / 
-                   NULLIF(COUNT(DISTINCT b.bed_id), 0)) * 100, 2) AS bed_occupancy_rate
-        FROM departments d
-        LEFT JOIN rooms r ON d.department_id = r.department_id
-        LEFT JOIN beds b ON r.room_id = b.room_id
-        LEFT JOIN doctors doc ON d.department_id = doc.department_id
-        LEFT JOIN staff st ON d.department_id = st.department_id
-        LEFT JOIN admissions a ON d.department_id = a.department_id
-        GROUP BY d.department_id, d.department_name, d.department_code, d.capacity;
+            (SELECT COUNT(*) FROM rooms r WHERE r.department_id = d.department_id) AS total_rooms,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.department_id = d.department_id) AS total_beds,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.department_id = d.department_id AND b.status = 'Occupied') AS occupied_beds,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.department_id = d.department_id AND b.status = 'Available') AS available_beds,
+            (SELECT COUNT(*) FROM doctors doc WHERE doc.department_id = d.department_id) AS doctor_count,
+            (SELECT COUNT(*) FROM staff st WHERE st.department_id = d.department_id) AS staff_count,
+            (SELECT COUNT(*) FROM admissions a WHERE a.department_id = d.department_id AND a.status = 'Active') AS active_patient_load,
+            ROUND((CAST((SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.department_id = d.department_id AND b.status = 'Occupied') AS FLOAT) / 
+                   NULLIF((SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.department_id = d.department_id), 0)) * 100, 2) AS bed_occupancy_rate
+        FROM departments d;
         """,
         """
-        CREATE VIEW IF NOT EXISTS v_room_type_analytics AS
+        DROP VIEW IF EXISTS v_room_type_analytics;
+        """,
+        """
+        CREATE VIEW v_room_type_analytics AS
         SELECT 
             rt.room_type_id,
             rt.room_type_name,
             rt.room_size,
             rt.base_tariff,
-            COUNT(DISTINCT r.room_id) AS total_rooms,
-            COUNT(b.bed_id) AS total_beds,
-            SUM(CASE WHEN b.status = 'Occupied' THEN 1 ELSE 0 END) AS occupied_beds,
-            SUM(CASE WHEN b.status = 'Available' THEN 1 ELSE 0 END) AS available_beds,
-            ROUND((CAST(SUM(CASE WHEN b.status = 'Occupied' THEN 1 ELSE 0 END) AS FLOAT) / 
-                   NULLIF(COUNT(b.bed_id), 0)) * 100, 2) AS utilization_rate
-        FROM room_types rt
-        LEFT JOIN rooms r ON rt.room_type_id = r.room_type_id
-        LEFT JOIN beds b ON r.room_id = b.room_id
-        GROUP BY rt.room_type_id, rt.room_type_name, rt.room_size, rt.base_tariff;
+            (SELECT COUNT(*) FROM rooms r WHERE r.room_type_id = rt.room_type_id) AS total_rooms,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.room_type_id = rt.room_type_id) AS total_beds,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.room_type_id = rt.room_type_id AND b.status = 'Occupied') AS occupied_beds,
+            (SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.room_type_id = rt.room_type_id AND b.status = 'Available') AS available_beds,
+            ROUND((CAST((SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.room_type_id = rt.room_type_id AND b.status = 'Occupied') AS FLOAT) / 
+                   NULLIF((SELECT COUNT(*) FROM beds b JOIN rooms r ON b.room_id = r.room_id WHERE r.room_type_id = rt.room_type_id), 0)) * 100, 2) AS utilization_rate
+        FROM room_types rt;
         """,
         """
-        CREATE VIEW IF NOT EXISTS v_geographic_distribution AS
+        DROP VIEW IF EXISTS v_geographic_distribution;
+        """,
+        """
+        CREATE VIEW v_geographic_distribution AS
         SELECT 
             p.state,
             p.district,
