@@ -1,6 +1,6 @@
 # Medical Operations Intelligence Platform (MediOps Pro)
 
-An enterprise-grade healthcare operations analytics, hospital resource planning, and clinical workload intelligence platform. Designed as a centralized decision-support system to provide visibility into patient flow dynamics, infrastructure capacity, workforce deployment, and operational risk metrics.
+An enterprise-grade healthcare operations analytics, hospital resource planning, and clinical workload intelligence platform. Designed as a centralized decision-support system to provide real-time visibility into patient flow dynamics, infrastructure capacity, workforce deployment, and operational risk metrics.
 
 ---
 
@@ -19,6 +19,7 @@ $$\text{Raw Event Streams} \longrightarrow \text{Relational Database Engine} \lo
 - **Clinical Workload Analytics**: Aggregated diagnostic volumes, procedure counts, and department-specific patient loads.
 - **Geographic Catchment Intelligence**: Demographic distribution mappings of patient registrations across Indian states and districts.
 - **Automated Risk Alerts**: Algorithmic detection of capacity saturation, prolonged discharge delays, and turnover bottlenecks.
+- **Global Analytical Slicing**: Multi-dimensional cascading filter engine to slice operational metrics across departments, diagnoses, doctors, and patient demographics.
 
 ---
 
@@ -27,35 +28,36 @@ $$\text{Raw Event Streams} \longrightarrow \text{Relational Database Engine} \lo
 The platform uses a normalized SQLite operational database with complete relational integrity (`PRAGMA foreign_keys = ON`).
 
 ```
-┌─────────────────────────┐
-│      DEPARTMENTS         │
-└────────────┬─────────────┘
-             │
-    ┌────────┼────────┐
-    │        │         │
-    ▼        ▼         ▼
-┌────────┐ ┌────────┐ ┌────────┐
-│DOCTORS │ │ STAFF  │ │ ROOMS  │
-└───┬────┘ └───┬────┘ └───┬────┘
-    │          │           │
-    │          ▼           ▼
-    │   ┌──────────────┐ ┌────────┐
-    │   │STAFF_        │ │  BEDS  │
-    │   │ASSIGNMENTS   │ └───┬────┘
-    │   └──────────────┘     │
-    │                        │
-    └──────────┐             │
-               ▼             ▼
-┌──────────┐ ┌────────────┐ ┌──────────────────┐
-│ PATIENTS │►│ ADMISSIONS │◄│ BED_ASSIGNMENTS   │
-└──────────┘ └─────┬──────┘ └───────────────────┘
-                    │
-      ┌─────────────┼─────────────┐
-      │              │              │
-      ▼              ▼              ▼
-┌────────────┐ ┌──────────────────┐ ┌────────────┐
-│ DISCHARGES │ │PATIENT_MOVEMENTS │ │ TREATMENTS │
-└────────────┘ └──────────────────┘ └────────────┘
+                        +---------------------+
+                        |     DEPARTMENTS     |
+                        +----------+----------+
+                                   |
+                +------------------+------------------+
+                |                  |                  |
+                v                  v                  v
+        +---------------+  +---------------+  +---------------+
+        |    DOCTORS    |  |     STAFF     |  |     ROOMS     |
+        +-------+-------+  +-------+-------+  +-------+-------+
+                |                  |                  |
+                |                  v                  v
+                |          +---------------+  +---------------+
+                |          |    STAFF_     |  |     BEDS      |
+                |          | ASSIGNMENTS   |  +-------+-------+
+                |          +---------------+          |
+                |                                     |
+                +------------------+                  |
+                                   |                  |
+                                   v                  v
+        +---------------+  +---------------+  +-------------------+
+        |   PATIENTS    |->|  ADMISSIONS   |<-|  BED_ASSIGNMENTS   |
+        +---------------+  +-------+-------+  +-------------------+
+                                   |
+                +------------------+------------------+
+                |                  |                  |
+                v                  v                  v
+        +---------------+  +-------------------+  +---------------+
+        |  DISCHARGES   |  | PATIENT_MOVEMENTS |  |  TREATMENTS   |
+        +---------------+  +-------------------+  +---------------+
 ```
 
 ### Relational Entity Dictionary
@@ -83,7 +85,7 @@ The platform uses a normalized SQLite operational database with complete relatio
 
 ## 3. SQL Analytical Views & KPI Formulation
 
-To eliminate Cartesian join performance overhead, analytical aggregations are computed directly within database views.
+To eliminate Cartesian join performance overhead, analytical aggregations are computed directly within database views and optimized SQL queries.
 
 ### Mathematical KPI Formulations
 
@@ -92,6 +94,8 @@ $$\text{Bed Occupancy Rate (\%)} = \left( \frac{\sum \text{Occupied Beds}}{\sum 
 $$\text{Department Occupancy Rate (\%)} = \left( \frac{\text{Occupied Beds}_{\text{Dept}}}{\text{Total Beds}_{\text{Dept}}} \right) \times 100$$
 
 $$\text{Accommodation Tier Utilization (\%)} = \left( \frac{\text{Occupied Beds}_{\text{Tier}}}{\text{Total Beds}_{\text{Tier}}} \right) \times 100$$
+
+$$\text{Length of Stay (Days)} = \text{JULIANDAY}(\text{Discharge Date}) - \text{JULIANDAY}(\text{Admission Date})$$
 
 ### Built-in SQL Views
 
@@ -117,15 +121,18 @@ $$\text{Accommodation Tier Utilization (\%)} = \left( \frac{\text{Occupied Beds}
 - Room tier categorization (`Basic (12 rooms) > Elite (5 rooms) > Premium (3 rooms)` per floor).
 - Bed-level drawer management: view assigned patient profiles, diagnosis, attending physician, expected discharge date, and perform operational state changes or patient discharges.
 
-### Module 3: Operational Intelligence & Analytics
+### Module 3: Operational Intelligence Hub
 
-- Multi-chart analytics hub featuring departmental capacity load, accommodation tier utilization, and global bed status distribution.
-- Filterable clinical diagnostic intake distribution by disease classification.
-- Filterable clinical service workload and procedure execution volumes.
+- **Patient Flow Conversion Funnel**: Stage conversion from registered patients to admissions, bed allocations, treatments, and discharges.
+- **Length of Stay & Delay Engine**: Overall and department-specific stay metrics, longest stays, and discharge delay rates.
+- **Bed Turnover Analytics**: Bed reassignment frequencies and turnover counts per clinical unit.
+- **Physician Workload Profile**: Active caseloads, total admissions, and procedures executed per doctor.
+- **Workforce Deployment**: Nursing staff allocation and patient-to-staff workload ratios across departments.
+- **Clinical Diagnostics & Services**: Diagnostic volumes and procedure throughput with horizontal layout formatting.
 
 ### Module 4: Risk & Anomaly Alerts
 
-- Automated threshold checking identifying critical capacity saturation (≥ 85%).
+- Automated threshold checking identifying critical capacity saturation (≥ 80%).
 - Early detection of discharge delays where active patient stay exceeds expected discharge date.
 - Identification of housekeeping turnover backlogs.
 
@@ -146,7 +153,7 @@ $$\text{Accommodation Tier Utilization (\%)} = \left( \frac{\text{Occupied Beds}
 
 - **Backend Framework**: Python 3.12+, FastAPI, Uvicorn
 - **Database & ORM**: SQLite3 (WAL mode, Foreign Keys enabled), SQLAlchemy Core & ORM
-- **Synthetic Data Engine**: Faker (Indian Locale `en_IN`), NumPy, Pandas
+- **Data Ingestion Engine**: CSV-based import pipeline, NumPy, Pandas
 - **Frontend Framework**: React 18 (Vite Bundler), React Router DOM v6
 - **Styling & Layout**: Tailwind CSS v4, Lucide React Icons
 - **Data Visualization**: Recharts (Responsive SVG Charts)
@@ -159,33 +166,36 @@ $$\text{Accommodation Tier Utilization (\%)} = \left( \frac{\text{Occupied Beds}
 ```text
 APP/
 ├── backend/
-│   ├── main.py                    # FastAPI routes, CORS middleware, and API endpoints
-│   ├── database.py                # SQLAlchemy schema, relationships, and SQL analytical views
-│   ├── models.py                  # Pydantic schemas (Data Transfer Objects & KPI validation)
+│   ├── main.py                     # FastAPI routes, CORS middleware, and API endpoints
+│   ├── database.py                 # SQLAlchemy schema, relationships, and SQL analytical views
+│   ├── models.py                   # Pydantic schemas (Data Transfer Objects & KPI validation)
 │   ├── services/
-│   │   ├── analytics_engine.py    # Aggregated analytics, SQL view readers, and risk logic
-│   │   └── event_handler.py       # Automated transactional audit logging service
+│   │   ├── analytics_engine.py     # Aggregated analytics, SQL view readers, and risk logic
+│   │   └── event_handler.py        # Automated transactional audit logging service
 │   ├── scripts/
-│   │   └── seed_data.py           # CSV import
-│   └── inspect_db.py              # Database inspection and schema verification utility
+│   │   └── seed_data.py            # Master import script: loads CSV source files and populates the database
+│   └── inspect_db.py               # Database inspection and schema verification utility
 ├── data/
-│   ├── hospital_blueprint.db      # Primary SQLite operational database
-│   └── processed/                 # CSV data exports generated during database initialization
+│   ├── hospital_blueprint.db       # Primary SQLite operational database
+│   └── processed/                  # Source CSV files used to populate the database on initialization
 ├── frontend/
 │   ├── index.html
 │   ├── package.json
 │   ├── vite.config.js
 │   └── src/
-│       ├── main.jsx                # React root application bootstrap
-│       ├── App.jsx                 # Global router and structural layout shell
-│       ├── index.css               # Base CSS and Tailwind CSS directives
+│       ├── main.jsx                    # React root application bootstrap
+│       ├── App.jsx                     # Global router and structural layout shell
+│       ├── index.css                   # Base CSS and Tailwind CSS directives
+│       ├── context/
+│       │   └── HospitalContext.jsx     # Global cascading filter state and context provider
 │       ├── components/
-│       │   └── Sidebar.jsx         # Navigation sidebar
+│       │   ├── Sidebar.jsx             # Navigation sidebar
+│       │   └── GlobalFilterBar.jsx     # Multi-dimensional cascading filter bar
 │       └── pages/
 │           ├── Dashboard.jsx           # Executive command center overview
 │           ├── FloorManagement.jsx     # Floor summaries and room type definitions table
 │           ├── Blueprint.jsx           # Interactive floor map and bed management drawer
-│           ├── Analytics.jsx           # Operational analytics and workload charts
+│           ├── Analytics.jsx           # Operational analytics, flow funnels, and workforce workload
 │           ├── RiskAlerts.jsx          # Threshold violations and bottleneck alerts
 │           ├── OperationalEvents.jsx   # Immutable audit transaction ledger
 │           └── GeoMap.jsx              # Geographic patient distribution map
@@ -211,25 +221,20 @@ APP/
 
 2. Install Python dependencies:
    ```powershell
-   pip install fastapi uvicorn sqlalchemy pandas pydantic python-multipart faker
+   pip install fastapi uvicorn sqlalchemy pandas pydantic python-multipart
    ```
 
-3. Initialize the database schema, build SQL analytical views, and seed Indian demographic and hospital operational records:
+3. Initialize the database schema, build SQL analytical views, and import Indian demographic and hospital operational records from the source CSV files:
    ```powershell
    python -m backend.scripts.seed_data
    ```
 
-4. Verify database creation and table integrity:
-   ```powershell
-   python backend\inspect_db.py
-   ```
-
-5. Launch the FastAPI backend server:
+4. Launch the FastAPI backend server:
    ```powershell
    uvicorn backend.main:app --reload --port 8000
    ```
 
-   The API will be available at `http://127.0.0.1:8000` (API Docs: `http://127.0.0.1:8000/docs`).
+   *The API will be available at `http://127.0.0.1:8000` (API Docs: `http://127.0.0.1:8000/docs`).*
 
 ### Step 2: Frontend Environment Setup & Launch
 
@@ -248,7 +253,7 @@ APP/
    npm run dev
    ```
 
-   The web application will be accessible at `http://localhost:5173`.
+   *The web application will be accessible at `http://localhost:5173`.*
 
 ---
 
@@ -260,5 +265,6 @@ APP/
 | **API Endpoints** | Visit `http://127.0.0.1:8000/api/overview` | Returns valid JSON with total capacity, active admissions, and occupancy percentage. |
 | **Interactive Blueprint** | Click a bed card on the Blueprint page | Opens management modal showing assigned patient data, tariff, and operational action buttons. |
 | **State Transitions** | Click "Approve Cleanliness" on a Cleaning bed | Bed state transitions to `Available`, logs an event to `operational_events`, and updates the UI live. |
+| **Cascading Filter Engine** | Change Department in Global Filter Bar | Filters down available doctors and diagnoses dynamically across all modules. |
 | **Geographic Mapping** | Open Geographic Coverage page | Interactive map renders Indian state bubble density markers with patient counts. |
 | **Audit Log Ledger** | Open Audit Event Log page | Displays chronological event records with category badges and timestamps. |
