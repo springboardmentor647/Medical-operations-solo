@@ -28,12 +28,17 @@ def get_db():
 def get_overview(db: Session = Depends(get_db)):
     return AnalyticsEngine.get_hospital_overview(db)
 
+@app.get("/api/filters/metadata")
+def get_filter_metadata(db: Session = Depends(get_db)):
+    return AnalyticsEngine.get_filter_metadata(db)
+
 @app.get("/api/floors/summary", response_model=List[models.FloorSummaryKPI])
 def get_floor_summaries(db: Session = Depends(get_db)):
     return AnalyticsEngine.get_floor_summaries(db)
 
 @app.get("/api/floors/{floor_id}/blueprint", response_model=List[models.BedDetailOut])
 def get_floor_blueprint(floor_id: int, db: Session = Depends(get_db)):
+    from sqlalchemy import text
     query = """
         SELECT 
             b.bed_id,
@@ -71,7 +76,6 @@ def get_floor_blueprint(floor_id: int, db: Session = Depends(get_db)):
         WHERE r.floor = :floor_id
         ORDER BY rt.room_type_id ASC, r.room_number ASC, b.bed_number ASC
     """
-    from sqlalchemy import text
     results = db.execute(text(query), {"floor_id": floor_id}).mappings().all()
     return [dict(row) for row in results]
 
@@ -91,13 +95,49 @@ def get_geographic_distribution(db: Session = Depends(get_db)):
 def get_patient_flow_trends(db: Session = Depends(get_db)):
     return AnalyticsEngine.get_patient_flow_trends(db)
 
+@app.get("/api/analytics/flow-funnel")
+def get_patient_flow_funnel(
+    department_id: Optional[int] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_patient_flow_funnel(db, department_id)
+
+@app.get("/api/analytics/los")
+def get_length_of_stay_analytics(db: Session = Depends(get_db)):
+    return AnalyticsEngine.get_length_of_stay_analytics(db)
+
+@app.get("/api/analytics/discharge-delays")
+def get_discharge_delay_analytics(db: Session = Depends(get_db)):
+    return AnalyticsEngine.get_discharge_delay_analytics(db)
+
+@app.get("/api/analytics/bed-turnover")
+def get_bed_turnover_analytics(db: Session = Depends(get_db)):
+    return AnalyticsEngine.get_bed_turnover_analytics(db)
+
+@app.get("/api/analytics/doctors")
+def get_doctor_performance_workload(
+    department_id: Optional[int] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_doctor_performance_workload(db, department_id)
+
+@app.get("/api/analytics/workforce-ratios")
+def get_workforce_deployment_ratios(db: Session = Depends(get_db)):
+    return AnalyticsEngine.get_workforce_deployment_ratios(db)
+
 @app.get("/api/analytics/diagnostics")
-def get_diagnostics_analytics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_diagnosis_demographics(db)
+def get_diagnostics_analytics(
+    category: Optional[str] = Query("ALL"),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_diagnosis_demographics(db, category)
 
 @app.get("/api/analytics/services")
-def get_services_demand(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_treatment_service_demand(db)
+def get_services_demand(
+    department_name: Optional[str] = Query("ALL"),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_treatment_service_demand(db, department_name)
 
 @app.get("/api/risks/alerts")
 def get_risk_alerts(db: Session = Depends(get_db)):

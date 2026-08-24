@@ -1,0 +1,11 @@
+* [33m29af354[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mbackup-before-cleanup[m[33m)[m Milestone Complete: Full Normalized Architecture, Dynamic SQL Analytical Views, Event Ledger, and Enterprise UI
+* [33m86b87bb[m Build: Finalized professional UI/UX, unified backend analytics API, and resolved UIUX
+* [33m25b8477[m Build: Finalized professional UI/UX, unified backend analytics API, and resolved data aggregation errors
+* [33m42580b0[m Refactor: Finalized Pro UI, implemented Bed-Room relational logic, and fixed API aggregation
+* [33m773b198[m Cleanup: Removed legacy Dash files and structured project for React + FastAPI architecture
+* [33m9313608[m Milestone 4: Integrated all modules into final executive dashboard
+* [33m86631e3[m Milestone 3: Implemented Resource Utilization and Capacity intelligence dashboard
+* [33mbcd9362[m Milestone 2: Implemented Patient Flow and Service Demand analytics dashboard
+* [33m257c1e2[m Milestone 1: Project structure initialization, data processing utilities, and SQLite integration
+* [33m63f60c7[m Milestone 1: Project structure initialization, data processing utilities, and SQLite integration
+* [33mb69f897[m Initial commit
