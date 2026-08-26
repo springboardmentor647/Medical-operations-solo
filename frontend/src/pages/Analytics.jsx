@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useHospital } from '../context/HospitalContext';
+import { useHospital } from '../hooks/useHospitalData';
 import { 
   BarChart, 
   Bar, 
@@ -32,18 +32,32 @@ export default function Analytics() {
     let isSubscribed = true;
     const fetchAnalytics = async () => {
       try {
+        const queryParams = new URLSearchParams({
+          department: appliedFilters.department || 'ALL',
+          floor: appliedFilters.floor || 'ALL',
+          room_type: appliedFilters.roomType || 'ALL',
+          admission_type: appliedFilters.admissionType || 'ALL',
+          diagnosis_category: appliedFilters.diagnosisCategory || 'ALL',
+          diagnosis: appliedFilters.diagnosis || 'ALL',
+          severity: appliedFilters.severity || 'ALL',
+          doctor: appliedFilters.doctor || 'ALL',
+          state: appliedFilters.state || 'ALL',
+          gender: appliedFilters.gender || 'ALL',
+          date_range: appliedFilters.dateRange || '30D'
+        }).toString();
+
         const [dpRes, rtRes, dgRes, svRes, trRes, fnRes, loRes, dlRes, toRes, docRes, wfRes] = await Promise.all([
-          axios.get('http://127.0.0.1:8000/api/departments/metrics'),
-          axios.get('http://127.0.0.1:8000/api/room-types/analytics'),
-          axios.get(`http://127.0.0.1:8000/api/analytics/diagnostics?category=${appliedFilters.diagnosisCategory}`),
-          axios.get(`http://127.0.0.1:8000/api/analytics/services?department_name=${appliedFilters.department}`),
-          axios.get('http://127.0.0.1:8000/api/trends/patient-flow'),
-          axios.get('http://127.0.0.1:8000/api/analytics/flow-funnel'),
-          axios.get('http://127.0.0.1:8000/api/analytics/los'),
-          axios.get('http://127.0.0.1:8000/api/analytics/discharge-delays'),
-          axios.get('http://127.0.0.1:8000/api/analytics/bed-turnover'),
-          axios.get('http://127.0.0.1:8000/api/analytics/doctors'),
-          axios.get('http://127.0.0.1:8000/api/analytics/workforce-ratios')
+          axios.get(`http://127.0.0.1:8000/api/departments/metrics?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/room-types/analytics?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/diagnostics?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/services?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/trends/patient-flow?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/flow-funnel?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/los?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/discharge-delays?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/bed-turnover?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/doctors?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/analytics/workforce-ratios?${queryParams}`)
         ]);
 
         if (isSubscribed) {
@@ -113,7 +127,7 @@ export default function Analytics() {
           <h2 className="text-3xl font-bold text-blue-600 mt-2">
             {trends.reduce((acc, curr) => acc + curr.net_patient_change, 0)}
           </h2>
-          <p className="text-[11px] text-slate-500 mt-1">30-Day cumulative intake flux</p>
+          <p className="text-[11px] text-slate-500 mt-1">Filtered cumulative intake flux</p>
         </div>
       </div>
 
@@ -125,27 +139,27 @@ export default function Analytics() {
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Registered</span>
               <span className="text-2xl font-bold text-slate-900 mt-1 block">{funnel.total_registered}</span>
-              <span className="text-[10px] text-blue-600 font-semibold">100% Base</span>
+              <span className="text-[10px] text-blue-600 font-semibold">Total Registry Base</span>
             </div>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Admitted</span>
               <span className="text-2xl font-bold text-blue-600 mt-1 block">{funnel.total_admissions}</span>
-              <span className="text-[10px] text-slate-500 font-semibold">{Math.round((funnel.total_admissions/funnel.total_registered)*100)}% Conversion</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Hospitalization Episodes</span>
             </div>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Bed Assigned</span>
               <span className="text-2xl font-bold text-indigo-600 mt-1 block">{funnel.total_bed_assignments}</span>
-              <span className="text-[10px] text-slate-500 font-semibold">{Math.round((funnel.total_bed_assignments/funnel.total_registered)*100)}% Placement</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Inpatient Placements</span>
             </div>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Treated</span>
               <span className="text-2xl font-bold text-emerald-600 mt-1 block">{funnel.total_treatments}</span>
-              <span className="text-[10px] text-slate-500 font-semibold">Procedures Executed</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Clinical Procedures</span>
             </div>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center col-span-2 sm:col-span-1">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Discharged</span>
               <span className="text-2xl font-bold text-slate-700 mt-1 block">{funnel.total_discharges}</span>
-              <span className="text-[10px] text-slate-500 font-semibold">Completed Episodes</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Completed Discharges</span>
             </div>
           </div>
         </div>

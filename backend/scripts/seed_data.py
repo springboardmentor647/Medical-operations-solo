@@ -7,6 +7,9 @@ import pandas as pd
 
 fake = Faker('en_IN')
 
+def to_iso(dt):
+    return dt.isoformat() if isinstance(dt, datetime) else dt
+
 def seed():
     DB_DIR = r"D:\INTERNSHIP\7TH SEM\INFOSYS SPRINGBOARD\APP\data"
     os.makedirs(DB_DIR, exist_ok=True)
@@ -94,7 +97,8 @@ def seed():
     shifts = ['Morning', 'Evening', 'Night']
     for s_id in range(1, 51):
         dept = ((s_id - 1) // 10) + 1
-        staff_assignments.append((assign_id, s_id, dept, random.choice(shifts), datetime.now() - timedelta(hours=random.randint(1, 8))))
+        assign_date = datetime.now() - timedelta(hours=random.randint(1, 24), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+        staff_assignments.append((assign_id, s_id, dept, random.choice(shifts), to_iso(assign_date)))
         assign_id += 1
     cur.executemany("INSERT INTO staff_assignments VALUES (?, ?, ?, ?, ?)", staff_assignments)
 
@@ -188,47 +192,62 @@ def seed():
         pat_id = f"P{adm_id:04d}"
         
         days_ago = random.randint(1, 14)
-        adm_date = datetime.now() - timedelta(days=days_ago, hours=random.randint(1, 20))
-        exp_dis = adm_date + timedelta(days=random.randint(3, 10))
+        adm_date = datetime.now() - timedelta(days=days_ago, hours=random.randint(1, 23), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+        exp_dis = adm_date + timedelta(days=random.randint(3, 10), hours=random.randint(1, 12))
         
-        admissions.append((adm_id, pat_id, adm_date, random.choice(['Urgent', 'Emergency', 'Elective']), d_id, doc, diag, exp_dis, None, 'Active'))
-        bed_assignments.append((b_assign_id, adm_id, pat_id, b_id, adm_date, None, 'Active'))
-        events.append((ev_id, 'ADMISSION', 'Admission', str(adm_id), adm_date, f"Patient {pat_id} admitted to Department {d_id} in Bed ID {b_id}"))
+        admissions.append((adm_id, pat_id, to_iso(adm_date), random.choice(['Urgent', 'Emergency', 'Elective']), d_id, doc, diag, to_iso(exp_dis), None, 'Active'))
+        bed_assignments.append((b_assign_id, adm_id, pat_id, b_id, to_iso(adm_date), None, 'Active'))
+        events.append((ev_id, 'ADMISSION', 'Admission', str(adm_id), to_iso(adm_date), f"Patient {pat_id} admitted to Department {d_id} in Bed ID {b_id}"))
         ev_id += 1
         b_assign_id += 1
         
-        treatments.append((treat_id, adm_id, pat_id, random.choice(range(1, 11)), doc, adm_date + timedelta(hours=random.randint(2, 24)), 'Completed'))
-        treat_id += 1
+        num_treatments = random.choices([1, 2, 3, 4], weights=[0.35, 0.40, 0.15, 0.10])[0]
+        for t_idx in range(num_treatments):
+            treat_time = adm_date + timedelta(hours=random.randint(2, 24) * (t_idx + 1), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+            treatments.append((treat_id, adm_id, pat_id, random.choice(range(1, 11)), doc, to_iso(treat_time), 'Completed'))
+            treat_id += 1
         
         if random.random() < 0.20:
             cur.execute("SELECT bed_id FROM beds WHERE bed_id != ? AND status = 'Occupied' LIMIT 1", (b_id,))
             prior_bed_row = cur.fetchone()
             if prior_bed_row:
                 prior_bed = prior_bed_row[0]
-                move_time = adm_date + timedelta(hours=random.randint(24, 72))
-                movements.append((mov_id, adm_id, pat_id, d_id, d_id, prior_bed, b_id, move_time, "Clinical Condition Escalation"))
-                events.append((ev_id, 'PATIENT_TRANSFER', 'PatientMovement', str(mov_id), move_time, f"Patient {pat_id} transferred to Bed {b_id}"))
+                move_time = adm_date + timedelta(hours=random.randint(24, 72), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+                movements.append((mov_id, adm_id, pat_id, d_id, d_id, prior_bed, b_id, to_iso(move_time), "Clinical Condition Escalation"))
+                events.append((ev_id, 'PATIENT_TRANSFER', 'PatientMovement', str(mov_id), to_iso(move_time), f"Patient {pat_id} transferred to Bed {b_id}"))
                 ev_id += 1
                 mov_id += 1
         
         adm_id += 1
 
-    for h in range(1, 400):
+    for h in range(1, 450):
         past_pat_id = f"P{random.randint(occupied_count + 1, 1000):04d}"
         d_id = random.randint(1, 5)
         cur.execute("SELECT doctor_id FROM doctors WHERE department_id = ?", (d_id,))
         doc = random.choice([row[0] for row in cur.fetchall()])
         diag = random.choice(range(1, 11))
         
-        adm_days = random.randint(5, 30)
-        stay_days = random.randint(2, 6)
-        adm_time = datetime.now() - timedelta(days=adm_days)
-        dis_time = adm_time + timedelta(days=stay_days)
-        exp_time = adm_time + timedelta(days=stay_days + random.randint(-1, 2))
+        adm_days = random.randint(5, 45)
+        stay_days = random.randint(2, 8)
+        adm_time = datetime.now() - timedelta(days=adm_days, hours=random.randint(1, 23), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+        dis_time = adm_time + timedelta(days=stay_days, hours=random.randint(1, 12), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+        exp_time = adm_time + timedelta(days=stay_days + random.randint(-1, 2), hours=random.randint(1, 6))
         
-        admissions.append((adm_id, past_pat_id, adm_time, random.choice(['Urgent', 'Emergency', 'Elective']), d_id, doc, diag, exp_time, dis_time, 'Discharged'))
-        discharges.append((dis_id, adm_id, dis_time, 'Standard Medical Discharge', 'Patient recovered satisfactorily.'))
-        events.append((ev_id, 'DISCHARGE', 'Discharge', str(dis_id), dis_time, f"Patient {past_pat_id} discharged from Department {d_id}"))
+        admissions.append((adm_id, past_pat_id, to_iso(adm_time), random.choice(['Urgent', 'Emergency', 'Elective']), d_id, doc, diag, to_iso(exp_time), to_iso(dis_time), 'Discharged'))
+        
+        if random.random() < 0.88:
+            dummy_bed_id = random.randint(1, total_beds_count)
+            bed_assignments.append((b_assign_id, adm_id, past_pat_id, dummy_bed_id, to_iso(adm_time), to_iso(dis_time), 'Discharged'))
+            b_assign_id += 1
+        
+        num_past_treatments = random.choices([0, 1, 2, 3], weights=[0.10, 0.50, 0.30, 0.10])[0]
+        for t_idx in range(num_past_treatments):
+            treat_time = adm_time + timedelta(hours=random.randint(4, 20) * (t_idx + 1), minutes=random.randint(0, 59), seconds=random.randint(0, 59))
+            treatments.append((treat_id, adm_id, past_pat_id, random.choice(range(1, 11)), doc, to_iso(treat_time), 'Completed'))
+            treat_id += 1
+
+        discharges.append((dis_id, adm_id, to_iso(dis_time), 'Standard Medical Discharge', 'Patient recovered satisfactorily.'))
+        events.append((ev_id, 'DISCHARGE', 'Discharge', str(dis_id), to_iso(dis_time), f"Patient {past_pat_id} discharged from Department {d_id}"))
         ev_id += 1
         dis_id += 1
         adm_id += 1

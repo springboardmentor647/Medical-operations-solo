@@ -25,16 +25,68 @@ def get_db():
         db.close()
 
 @app.get("/api/overview", response_model=models.HospitalOverviewKPI)
-def get_overview(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_hospital_overview(db)
+def get_overview(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_hospital_overview(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/filters/metadata")
 def get_filter_metadata(db: Session = Depends(get_db)):
     return AnalyticsEngine.get_filter_metadata(db)
 
 @app.get("/api/floors/summary", response_model=List[models.FloorSummaryKPI])
-def get_floor_summaries(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_floor_summaries(db)
+def get_floor_summaries(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_floor_summaries(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/floors/{floor_id}/blueprint", response_model=List[models.BedDetailOut])
 def get_floor_blueprint(floor_id: int, db: Session = Depends(get_db)):
@@ -80,64 +132,364 @@ def get_floor_blueprint(floor_id: int, db: Session = Depends(get_db)):
     return [dict(row) for row in results]
 
 @app.get("/api/departments/metrics", response_model=List[models.DepartmentMetricKPI])
-def get_department_metrics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_department_metrics(db)
+def get_department_metrics(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_department_metrics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/room-types/analytics", response_model=List[models.RoomTypeAnalyticsKPI])
-def get_room_type_analytics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_room_type_analytics(db)
+def get_room_type_analytics(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_room_type_analytics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/geographic/distribution")
-def get_geographic_distribution(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_geographic_distribution(db)
+def get_geographic_distribution(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_geographic_distribution(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/trends/patient-flow")
-def get_patient_flow_trends(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_patient_flow_trends(db)
+def get_patient_flow_trends(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_patient_flow_trends(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/flow-funnel")
 def get_patient_flow_funnel(
-    department_id: Optional[int] = Query(None),
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
     db: Session = Depends(get_db)
 ):
-    return AnalyticsEngine.get_patient_flow_funnel(db, department_id)
+    return AnalyticsEngine.get_patient_flow_funnel(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/los")
-def get_length_of_stay_analytics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_length_of_stay_analytics(db)
+def get_length_of_stay_analytics(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_length_of_stay_analytics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/discharge-delays")
-def get_discharge_delay_analytics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_discharge_delay_analytics(db)
+def get_discharge_delay_analytics(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_discharge_delay_analytics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/bed-turnover")
-def get_bed_turnover_analytics(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_bed_turnover_analytics(db)
+def get_bed_turnover_analytics(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_bed_turnover_analytics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/doctors")
 def get_doctor_performance_workload(
-    department_id: Optional[int] = Query(None),
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
     db: Session = Depends(get_db)
 ):
-    return AnalyticsEngine.get_doctor_performance_workload(db, department_id)
+    return AnalyticsEngine.get_doctor_performance_workload(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/workforce-ratios")
-def get_workforce_deployment_ratios(db: Session = Depends(get_db)):
-    return AnalyticsEngine.get_workforce_deployment_ratios(db)
+def get_workforce_deployment_ratios(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_workforce_deployment_ratios(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/diagnostics")
 def get_diagnostics_analytics(
-    category: Optional[str] = Query("ALL"),
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
     db: Session = Depends(get_db)
 ):
-    return AnalyticsEngine.get_diagnosis_demographics(db, category)
+    return AnalyticsEngine.get_diagnosis_demographics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/analytics/services")
 def get_services_demand(
-    department_name: Optional[str] = Query("ALL"),
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
     db: Session = Depends(get_db)
 ):
-    return AnalyticsEngine.get_treatment_service_demand(db, department_name)
+    return AnalyticsEngine.get_treatment_service_demand(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
 
 @app.get("/api/risks/alerts")
 def get_risk_alerts(db: Session = Depends(get_db)):
@@ -146,13 +498,13 @@ def get_risk_alerts(db: Session = Depends(get_db)):
 @app.get("/api/events", response_model=List[models.OperationalEventOut])
 def get_events(
     event_type: Optional[str] = None,
-    limit: int = Query(50, le=200),
+    limit: int = Query(150, le=300),
     db: Session = Depends(get_db)
 ):
     query = db.query(database.OperationalEvent)
-    if event_type:
+    if event_type and event_type != "ALL":
         query = query.filter(database.OperationalEvent.event_type == event_type)
-    return query.order_by(database.OperationalEvent.timestamp.desc()).limit(limit).all()
+    return query.order_by(database.OperationalEvent.timestamp.desc(), database.OperationalEvent.event_id.desc()).limit(limit).all()
 
 @app.post("/api/operations/admit")
 def admit_patient(admission_in: models.AdmissionCreate, db: Session = Depends(get_db)):

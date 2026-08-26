@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useHospital } from '../context/HospitalContext';
+import { useHospital } from '../hooks/useHospitalData';
 import { 
   Bed, 
   Users, 
@@ -39,10 +39,24 @@ export default function Dashboard() {
     let isSubscribed = true;
     const fetchDashboardData = async () => {
       try {
+        const queryParams = new URLSearchParams({
+          department: appliedFilters.department || 'ALL',
+          floor: appliedFilters.floor || 'ALL',
+          room_type: appliedFilters.roomType || 'ALL',
+          admission_type: appliedFilters.admissionType || 'ALL',
+          diagnosis_category: appliedFilters.diagnosisCategory || 'ALL',
+          diagnosis: appliedFilters.diagnosis || 'ALL',
+          severity: appliedFilters.severity || 'ALL',
+          doctor: appliedFilters.doctor || 'ALL',
+          state: appliedFilters.state || 'ALL',
+          gender: appliedFilters.gender || 'ALL',
+          date_range: appliedFilters.dateRange || '30D'
+        }).toString();
+
         const [ovRes, trRes, dpRes, rkRes] = await Promise.all([
-          axios.get('http://127.0.0.1:8000/api/overview'),
-          axios.get('http://127.0.0.1:8000/api/trends/patient-flow'),
-          axios.get('http://127.0.0.1:8000/api/departments/metrics'),
+          axios.get(`http://127.0.0.1:8000/api/overview?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/trends/patient-flow?${queryParams}`),
+          axios.get(`http://127.0.0.1:8000/api/departments/metrics?${queryParams}`),
           axios.get('http://127.0.0.1:8000/api/risks/alerts')
         ]);
         if (isSubscribed) {
@@ -127,7 +141,7 @@ export default function Dashboard() {
         <div className="lg:col-span-2 bg-white border border-slate-200/80 p-6 rounded-xl shadow-xs">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">30-Day Patient Flow Velocity</h2>
+              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Patient Flow Velocity</h2>
               <p className="text-xs text-slate-500 mt-0.5 font-medium">Daily admissions intake volume versus official discharge completion</p>
             </div>
           </div>

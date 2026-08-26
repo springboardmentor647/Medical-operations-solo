@@ -66,7 +66,7 @@ export default function GlobalFilterBar() {
               <option value="7D">Last 7 Days</option>
               <option value="30D">Last 30 Days</option>
               <option value="90D">Last 90 Days</option>
-              <option value="ALL">All Time Horizon</option>
+              <option value="ALL">All Time</option>
             </select>
           </div>
 
@@ -77,7 +77,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('department', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Departments</option>
+              <option value="ALL">All</option>
               {metadata.departments.map(d => (
                 <option key={d.department_id} value={d.department_name}>{d.department_name}</option>
               ))}
@@ -91,9 +91,9 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('floor', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Floors</option>
+              <option value="ALL">All</option>
               {metadata.floors.map(f => (
-                <option key={f} value={f}>Floor Level {f}</option>
+                <option key={f} value={f.toString()}>Floor Level {f}</option>
               ))}
             </select>
           </div>
@@ -105,7 +105,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('roomType', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Room Specs</option>
+              <option value="ALL">All</option>
               {metadata.room_types.map(rt => (
                 <option key={rt.room_type_id} value={rt.room_type_name}>{rt.room_type_name}</option>
               ))}
@@ -119,7 +119,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('admissionType', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Admission Types</option>
+              <option value="ALL">All</option>
               {metadata.admission_types.map(at => (
                 <option key={at} value={at}>{at}</option>
               ))}
@@ -133,7 +133,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('diagnosisCategory', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Categories</option>
+              <option value="ALL">All</option>
               {diagnosisCategories.map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
@@ -147,7 +147,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('diagnosis', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Diagnoses</option>
+              <option value="ALL">All</option>
               {availableDiagnoses.map(dg => (
                 <option key={dg.diagnosis_id} value={dg.diagnosis_name}>{dg.diagnosis_name}</option>
               ))}
@@ -161,7 +161,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('severity', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Severities</option>
+              <option value="ALL">All</option>
               {metadata.severities.map(sev => (
                 <option key={sev} value={sev}>{sev}</option>
               ))}
@@ -175,9 +175,9 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('doctor', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Doctors</option>
+              <option value="ALL">All</option>
               {availableDoctors.map(doc => (
-                <option key={doc.doctor_id} value={doc.doctor_name}>{doc.doctor_name} ({doc.specialization})</option>
+                <option key={doc.doctor_id} value={doc.doctor_name}>{doc.doctor_name}</option>
               ))}
             </select>
           </div>
@@ -189,7 +189,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('state', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Indian States</option>
+              <option value="ALL">All</option>
               {metadata.states.map(st => (
                 <option key={st} value={st}>{st}</option>
               ))}
@@ -203,7 +203,7 @@ export default function GlobalFilterBar() {
               onChange={(e) => updateFilter('gender', e.target.value)}
               className="w-full text-xs font-semibold bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 shadow-xs outline-none"
             >
-              <option value="ALL">All Genders</option>
+              <option value="ALL">All</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
