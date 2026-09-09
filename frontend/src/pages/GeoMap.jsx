@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useHospital } from '../context/HospitalContext';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapPin, Users } from 'lucide-react';
 
 export default function GeoMap() {
+  const { appliedFilters } = useHospital();
   const [geoData, setGeoData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +25,22 @@ export default function GeoMap() {
     let isMounted = true;
     const fetchGeo = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:8000/api/geographic/distribution');
+        setLoading(true);
+        const queryParams = new URLSearchParams({
+          department: appliedFilters.department || 'ALL',
+          floor: appliedFilters.floor || 'ALL',
+          room_type: appliedFilters.roomType || 'ALL',
+          admission_type: appliedFilters.admissionType || 'ALL',
+          diagnosis_category: appliedFilters.diagnosisCategory || 'ALL',
+          diagnosis: appliedFilters.diagnosis || 'ALL',
+          severity: appliedFilters.severity || 'ALL',
+          doctor: appliedFilters.doctor || 'ALL',
+          state: appliedFilters.state || 'ALL',
+          gender: appliedFilters.gender || 'ALL',
+          date_range: appliedFilters.dateRange || '30D'
+        }).toString();
+
+        const res = await axios.get(`http://127.0.0.1:8000/api/geographic/distribution?${queryParams}`);
         if (isMounted) setGeoData(res.data);
       } catch (err) {
         console.error(err);
@@ -31,11 +48,15 @@ export default function GeoMap() {
         if (isMounted) setLoading(false);
       }
     };
-    fetchGeo();
-    return () => { isMounted = false; };
-  }, []);
 
-  const totalRegisteredPatients = geoData.reduce((acc, curr) => acc + curr.total_patients, 0);
+    fetchGeo();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [appliedFilters]);
+
+  const totalFilteredPatients = geoData.reduce((acc, curr) => acc + curr.total_patients, 0);
 
   if (loading) {
     return (
@@ -54,7 +75,7 @@ export default function GeoMap() {
         </div>
         <div className="flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-lg border border-slate-200 shadow-xs text-xs font-semibold text-slate-700">
           <Users size={14} className="text-blue-600" />
-          <span>Total Mapped Registry: <strong className="text-slate-900">{totalRegisteredPatients} Patients</strong></span>
+          <span>Total Mapped Patients: <strong className="text-slate-900">{totalFilteredPatients} Patients</strong></span>
         </div>
       </div>
 
@@ -76,7 +97,7 @@ export default function GeoMap() {
               />
               {geoData.map((d, i) => {
                 const coords = stateCoords[d.state] || [20.5937, 78.9629];
-                const radius = Math.max(12, Math.min(d.total_patients / 3.5, 35));
+                const radius = Math.max(10, Math.min(d.total_patients / 3.5, 35));
                 return (
                   <CircleMarker
                     key={i}
@@ -93,7 +114,7 @@ export default function GeoMap() {
                       <div className="p-1 space-y-1 text-xs">
                         <h4 className="font-bold text-slate-900 text-sm border-b pb-1">{d.state}</h4>
                         <div className="flex justify-between gap-4 text-slate-600 pt-1">
-                          <span>Total Patients:</span>
+                          <span>Registered Inpatients:</span>
                           <strong className="text-slate-900">{d.total_patients}</strong>
                         </div>
                         <div className="flex justify-between gap-4 text-slate-600">
@@ -112,7 +133,7 @@ export default function GeoMap() {
         <div className="bg-white border border-slate-200/80 rounded-xl shadow-xs overflow-hidden flex flex-col h-[600px]">
           <div className="p-4 border-b border-slate-100 bg-slate-50/50">
             <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Regional Inflow Rankings</h2>
-            <p className="text-[11px] text-slate-500 mt-0.5">Patients sorted by state concentration</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">Filtered patient volume by state</p>
           </div>
 
           <div className="flex-1 overflow-y-auto divide-y divide-slate-100">

@@ -491,6 +491,36 @@ def get_services_demand(
         date_range=date_range
     )
 
+@app.get("/api/analytics/turnover")
+def get_financial_turnover(
+    department: Optional[str] = Query(None),
+    floor: Optional[str] = Query(None),
+    room_type: Optional[str] = Query(None),
+    admission_type: Optional[str] = Query(None),
+    diagnosis_category: Optional[str] = Query(None),
+    diagnosis: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    doctor: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    date_range: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    return AnalyticsEngine.get_financial_turnover_analytics(
+        db,
+        department=department,
+        floor=floor,
+        room_type=room_type,
+        admission_type=admission_type,
+        diagnosis_category=diagnosis_category,
+        diagnosis=diagnosis,
+        severity=severity,
+        doctor=doctor,
+        state=state,
+        gender=gender,
+        date_range=date_range
+    )
+
 @app.get("/api/risks/alerts")
 def get_risk_alerts(db: Session = Depends(get_db)):
     return AnalyticsEngine.get_operational_risks(db)

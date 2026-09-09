@@ -3,6 +3,7 @@ import {
   LayoutDashboard, 
   Layers, 
   BarChart3, 
+  IndianRupee,
   History, 
   MapPin, 
   AlertTriangle,
@@ -14,6 +15,7 @@ export default function Sidebar() {
     { to: "/", icon: LayoutDashboard, label: "Command Center" },
     { to: "/floors", icon: Layers, label: "Floor & Bed Maps" },
     { to: "/analytics", icon: BarChart3, label: "Operational Intelligence" },
+    { to: "/turnover", icon: IndianRupee, label: "Revenue & Turnover" },
     { to: "/risks", icon: AlertTriangle, label: "Risk & Alerts" },
     { to: "/events", icon: History, label: "Audit Event Log" },
     { to: "/geographic", icon: MapPin, label: "Geographic Coverage" }

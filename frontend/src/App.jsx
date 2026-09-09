@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import FloorManagement from './pages/FloorManagement';
 import Blueprint from './pages/Blueprint';
 import Analytics from './pages/Analytics';
+import Turnover from './pages/Turnover';
 import OperationalEvents from './pages/OperationalEvents';
 import GeoMap from './pages/GeoMap';
 import RiskAlerts from './pages/RiskAlerts';
@@ -24,6 +25,7 @@ export default function App() {
                 <Route path="/floors" element={<FloorManagement />} />
                 <Route path="/floor/:floorId" element={<Blueprint />} />
                 <Route path="/analytics" element={<Analytics />} />
+                <Route path="/turnover" element={<Turnover />} />
                 <Route path="/events" element={<OperationalEvents />} />
                 <Route path="/geographic" element={<GeoMap />} />
                 <Route path="/risks" element={<RiskAlerts />} />
