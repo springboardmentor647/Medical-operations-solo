@@ -283,5 +283,3 @@ APP/
 | **Audit Log Ledger** | Open Audit Event Log page | Displays chronological event records with category badges and timestamps. |
 ```
 
----
-
