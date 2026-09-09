@@ -1,0 +1,11 @@
+service_id,service_name,department_id,base_cost
+1,Echocardiogram,1,2500.0
+2,Coronary Angiography,1,15000.0
+3,Knee Arthroscopy,2,35000.0
+4,Fracture Reduction & Plaster,2,8000.0
+5,Nebulization & O2 Therapy,3,1200.0
+6,Pediatric Critical Care Monitoring,3,5000.0
+7,Intravenous Antibiotic Therapy,4,3000.0
+8,Endocrine Stabilization,4,4500.0
+9,Laparoscopic Appendectomy,5,45000.0
+10,Open Cholecystectomy,5,55000.0

@@ -1,0 +1,51 @@
+staff_id,staff_name,role,department_id
+1,Gauri Menon,Senior Nurse,1
+2,Aradhana Dewan,Nurse,1
+3,Sneha Agate,Nurse,1
+4,Urvashi Shan,Nurse,1
+5,Frederick Agate,Ward Attendant,1
+6,Maya Saxena,Senior Nurse,1
+7,Darika Bajaj,Nurse,1
+8,Matthew Khanna,Technician,1
+9,Manya Gopal,Senior Nurse,1
+10,Gaurika Deol,Nurse,1
+11,Manbir Char,Senior Nurse,2
+12,Zehaan Sachdeva,Senior Nurse,2
+13,Naveen Singhal,Ward Attendant,2
+14,Garima Bassi,Senior Nurse,2
+15,Yatin Jhaveri,Senior Nurse,2
+16,Yachana Viswanathan,Technician,2
+17,Ria Vora,Senior Nurse,2
+18,Jeet Pradhan,Ward Attendant,2
+19,Charita Kakar,Nurse,2
+20,Bhavika Chopra,Technician,2
+21,Tanmayi Guha,Senior Nurse,3
+22,Aashi Kumar,Technician,3
+23,Triveni Bath,Senior Nurse,3
+24,Yamini Gala,Nurse,3
+25,Aarini Mann,Ward Attendant,3
+26,Xalak Memon,Ward Attendant,3
+27,Tara Ramaswamy,Nurse,3
+28,Megha Gaba,Senior Nurse,3
+29,Ethan Wali,Technician,3
+30,Ridhi Vohra,Ward Attendant,3
+31,Jagvi Thaman,Technician,4
+32,Simon Dave,Senior Nurse,4
+33,Reyansh Dugar,Ward Attendant,4
+34,Gautami Sehgal,Senior Nurse,4
+35,Vidhi Venkataraman,Senior Nurse,4
+36,Leela Borah,Ward Attendant,4
+37,Praneel Sarkar,Ward Attendant,4
+38,Krish Chauhan,Ward Attendant,4
+39,Niharika Oak,Technician,4
+40,Triya Banerjee,Senior Nurse,4
+41,Dhruv Sarin,Nurse,5
+42,Timothy Som,Technician,5
+43,Sanaya Nori,Nurse,5
+44,Thomas Khatri,Technician,5
+45,Gayathri Subramanian,Ward Attendant,5
+46,Zaid Sarma,Ward Attendant,5
+47,Abdul Reddy,Technician,5
+48,Bahadurjit Dube,Ward Attendant,5
+49,Nilima Varty,Technician,5
+50,Dhriti Uppal,Senior Nurse,5

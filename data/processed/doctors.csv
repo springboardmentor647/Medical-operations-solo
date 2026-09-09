@@ -1,0 +1,11 @@
+doctor_id,doctor_name,department_id,specialization,designation
+1,Dr. Sudiksha Bala,1,Cardiologist,Senior Consultant
+2,Dr. Amruta Konda,1,Interventional Cardiologist,Head of Department
+3,Dr. Hitesh Patil,2,Orthopedic Surgeon,Senior Consultant
+4,Dr. Joshua Mitra,2,Joint Replacement Specialist,Consultant
+5,Dr. Upma Sagar,3,Pediatrician,Associate Consultant
+6,Dr. Urmi Mangal,3,Pediatric Intensivist,Senior Consultant
+7,Dr. Harsh Dar,4,Internal Medicine Specialist,Chief Physician
+8,Dr. Advika Wali,4,General Physician,Consultant
+9,Dr. Jonathan Krish,5,General Surgeon,Chief Surgeon
+10,Dr. Mugdha Narain,5,Laparoscopic Surgeon,Senior Consultant

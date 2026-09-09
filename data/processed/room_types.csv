@@ -1,0 +1,4 @@
+room_type_id,room_type_name,room_size,meals,amenities,guest_accommodation,visitor_bed_available,comfort_privacy,base_tariff
+1,Basic,Standard,Standard,"AC, TV, Wi-Fi, Attached Bathroom",0,0,Standard,1200.0
+2,Elite,Large,Enhanced,"AC, Smart TV, Wi-Fi, Attached Bathroom, Refrigerator, Better Furnishings",0,0,High,3000.0
+3,Premium,Largest,Premium,"AC, Smart TV, Wi-Fi, Attached Bathroom, Refrigerator, Premium Furnishings, Mini Lounge",1,1,Highest,6500.0

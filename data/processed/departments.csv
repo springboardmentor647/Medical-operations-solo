@@ -1,0 +1,6 @@
+department_id,department_name,department_code,floor,capacity
+1,Cardiology,CAR,1,60
+2,Orthopedics,ORT,2,50
+3,Pediatrics,PED,3,40
+4,General Medicine,GEN,4,70
+5,General Surgery,SUR,5,50

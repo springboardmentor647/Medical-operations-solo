@@ -1,0 +1,11 @@
+diagnosis_id,diagnosis_name,category,severity
+1,Acute Myocardial Infarction,Cardiovascular,Critical
+2,Hypertensive Heart Disease,Cardiovascular,Moderate
+3,Osteoarthritis Knee,Musculoskeletal,Mild
+4,Femur Fracture,Trauma,Severe
+5,Bronchopneumonia,Respiratory,Moderate
+6,Viral Gastroenteritis,Infectious,Mild
+7,Type 2 Diabetes Mellitus,Endocrine,Moderate
+8,Acute Appendicitis,Gastrointestinal,Severe
+9,Cholelithiasis,Gastrointestinal,Moderate
+10,Chronic Kidney Disease,Renal,Critical

@@ -1,8 +1,11 @@
-data/hospital_blueprint.db
-data/processed/*.csv
-data/processed/*.db
-backend/scripts/
+check_db.py
+"Internship_artifacts (4).zip"
+Internship_artifacts/
 backend/inspect_db.py
+backend/scripts/fix_dates.py
+backend/scripts/fix_all.py
+backend/scripts/migrate_schema.py
+backend/scripts/setup_db.py
 __pycache__/
 *.pyc
 .venv/
@@ -10,3 +13,4 @@ __pycache__/
 .DS_Store
 node_modules/
 dist/
+*.tmp

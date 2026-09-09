@@ -1,0 +1,625 @@
+event_id,event_type,entity_name,entity_id,timestamp,description
+1,ADMISSION,Admission,1,2026-08-17T04:02:07.666000,Patient P0001 admitted to Department 2 in Bed ID 38
+2,ADMISSION,Admission,2,2026-08-16T13:42:28.666051,Patient P0002 admitted to Department 1 in Bed ID 5
+3,PATIENT_TRANSFER,PatientMovement,1,2026-08-17T14:34:54.666051,Patient P0002 transferred to Bed 5
+4,ADMISSION,Admission,3,2026-08-16T05:24:21.666110,Patient P0003 admitted to Department 4 in Bed ID 127
+5,ADMISSION,Admission,4,2026-08-24T04:57:22.666132,Patient P0004 admitted to Department 2 in Bed ID 43
+6,ADMISSION,Admission,5,2026-08-17T05:30:18.666155,Patient P0005 admitted to Department 4 in Bed ID 128
+7,ADMISSION,Admission,6,2026-08-14T17:52:53.666174,Patient P0006 admitted to Department 2 in Bed ID 58
+8,ADMISSION,Admission,7,2026-08-13T09:22:18.666193,Patient P0007 admitted to Department 5 in Bed ID 157
+9,ADMISSION,Admission,8,2026-08-20T12:32:29.666211,Patient P0008 admitted to Department 4 in Bed ID 117
+10,ADMISSION,Admission,9,2026-08-23T09:17:08.666237,Patient P0009 admitted to Department 3 in Bed ID 91
+11,ADMISSION,Admission,10,2026-08-12T12:18:18.666256,Patient P0010 admitted to Department 3 in Bed ID 104
+12,PATIENT_TRANSFER,PatientMovement,2,2026-08-14T06:14:28.666256,Patient P0010 transferred to Bed 104
+13,ADMISSION,Admission,11,2026-08-18T19:26:06.666281,Patient P0011 admitted to Department 3 in Bed ID 76
+14,ADMISSION,Admission,12,2026-08-13T03:14:05.666305,Patient P0012 admitted to Department 3 in Bed ID 89
+15,ADMISSION,Admission,13,2026-08-20T19:58:32.666321,Patient P0013 admitted to Department 5 in Bed ID 159
+16,PATIENT_TRANSFER,PatientMovement,3,2026-08-23T11:28:31.666321,Patient P0013 transferred to Bed 159
+17,ADMISSION,Admission,14,2026-08-17T20:46:02.666342,Patient P0014 admitted to Department 1 in Bed ID 24
+18,ADMISSION,Admission,15,2026-08-19T12:36:51.666358,Patient P0015 admitted to Department 5 in Bed ID 180
+19,ADMISSION,Admission,16,2026-08-13T12:10:46.666382,Patient P0016 admitted to Department 2 in Bed ID 62
+20,ADMISSION,Admission,17,2026-08-16T17:22:28.666404,Patient P0017 admitted to Department 2 in Bed ID 59
+21,ADMISSION,Admission,18,2026-08-22T17:41:02.666419,Patient P0018 admitted to Department 1 in Bed ID 34
+22,PATIENT_TRANSFER,PatientMovement,4,2026-08-23T19:24:35.666419,Patient P0018 transferred to Bed 34
+23,ADMISSION,Admission,19,2026-08-22T00:14:20.666448,Patient P0019 admitted to Department 5 in Bed ID 150
+24,ADMISSION,Admission,20,2026-08-11T18:21:10.666471,Patient P0020 admitted to Department 5 in Bed ID 152
+25,ADMISSION,Admission,21,2026-08-16T01:51:15.666487,Patient P0021 admitted to Department 1 in Bed ID 8
+26,ADMISSION,Admission,22,2026-08-18T08:39:26.666503,Patient P0022 admitted to Department 4 in Bed ID 123
+27,ADMISSION,Admission,23,2026-08-18T16:50:17.666524,Patient P0023 admitted to Department 3 in Bed ID 107
+28,ADMISSION,Admission,24,2026-08-22T10:31:37.666542,Patient P0024 admitted to Department 3 in Bed ID 97
+29,ADMISSION,Admission,25,2026-08-21T07:48:38.666561,Patient P0025 admitted to Department 5 in Bed ID 176
+30,ADMISSION,Admission,26,2026-08-23T16:25:36.666579,Patient P0026 admitted to Department 2 in Bed ID 67
+31,ADMISSION,Admission,27,2026-08-16T12:11:16.666600,Patient P0027 admitted to Department 5 in Bed ID 163
+32,ADMISSION,Admission,28,2026-08-24T22:47:34.666620,Patient P0028 admitted to Department 4 in Bed ID 146
+33,ADMISSION,Admission,29,2026-08-15T04:17:40.666641,Patient P0029 admitted to Department 2 in Bed ID 71
+34,ADMISSION,Admission,30,2026-08-22T02:32:18.666661,Patient P0030 admitted to Department 1 in Bed ID 22
+35,ADMISSION,Admission,31,2026-08-25T10:18:43.666677,Patient P0031 admitted to Department 3 in Bed ID 77
+36,ADMISSION,Admission,32,2026-08-18T21:56:49.666696,Patient P0032 admitted to Department 1 in Bed ID 37
+37,ADMISSION,Admission,33,2026-08-12T19:41:03.666713,Patient P0033 admitted to Department 4 in Bed ID 119
+38,ADMISSION,Admission,34,2026-08-22T23:01:00.666733,Patient P0034 admitted to Department 2 in Bed ID 47
+39,ADMISSION,Admission,35,2026-08-18T04:45:02.666752,Patient P0035 admitted to Department 3 in Bed ID 108
+40,ADMISSION,Admission,36,2026-08-13T20:48:32.666773,Patient P0036 admitted to Department 3 in Bed ID 106
+41,ADMISSION,Admission,37,2026-08-22T07:19:17.666795,Patient P0037 admitted to Department 2 in Bed ID 45
+42,ADMISSION,Admission,38,2026-08-16T00:19:06.666815,Patient P0038 admitted to Department 5 in Bed ID 177
+43,ADMISSION,Admission,39,2026-08-19T14:29:43.666836,Patient P0039 admitted to Department 5 in Bed ID 169
+44,ADMISSION,Admission,40,2026-08-16T15:57:08.666854,Patient P0040 admitted to Department 1 in Bed ID 3
+45,ADMISSION,Admission,41,2026-08-12T05:28:23.666870,Patient P0041 admitted to Department 1 in Bed ID 17
+46,ADMISSION,Admission,42,2026-08-25T10:26:55.666886,Patient P0042 admitted to Department 5 in Bed ID 160
+47,ADMISSION,Admission,43,2026-08-20T01:26:23.666907,Patient P0043 admitted to Department 4 in Bed ID 112
+48,ADMISSION,Admission,44,2026-08-22T14:31:11.666925,Patient P0044 admitted to Department 4 in Bed ID 120
+49,ADMISSION,Admission,45,2026-08-22T22:30:07.666949,Patient P0045 admitted to Department 5 in Bed ID 164
+50,PATIENT_TRANSFER,PatientMovement,5,2026-08-24T22:31:23.666949,Patient P0045 transferred to Bed 164
+51,ADMISSION,Admission,46,2026-08-14T06:32:08.666972,Patient P0046 admitted to Department 3 in Bed ID 78
+52,ADMISSION,Admission,47,2026-08-24T06:56:52.666990,Patient P0047 admitted to Department 1 in Bed ID 18
+53,ADMISSION,Admission,48,2026-08-14T06:17:53.667011,Patient P0048 admitted to Department 1 in Bed ID 32
+54,ADMISSION,Admission,49,2026-08-13T15:18:26.667034,Patient P0049 admitted to Department 2 in Bed ID 41
+55,PATIENT_TRANSFER,PatientMovement,6,2026-08-16T10:18:27.667034,Patient P0049 transferred to Bed 41
+56,ADMISSION,Admission,50,2026-08-24T19:52:38.667058,Patient P0050 admitted to Department 3 in Bed ID 109
+57,ADMISSION,Admission,51,2026-08-18T23:07:14.667081,Patient P0051 admitted to Department 5 in Bed ID 181
+58,ADMISSION,Admission,52,2026-08-23T12:19:14.667100,Patient P0052 admitted to Department 2 in Bed ID 66
+59,ADMISSION,Admission,53,2026-08-17T05:31:06.667115,Patient P0053 admitted to Department 5 in Bed ID 172
+60,PATIENT_TRANSFER,PatientMovement,7,2026-08-19T17:59:33.667115,Patient P0053 transferred to Bed 172
+61,ADMISSION,Admission,54,2026-08-18T06:15:03.667142,Patient P0054 admitted to Department 5 in Bed ID 183
+62,ADMISSION,Admission,55,2026-08-15T11:40:20.667157,Patient P0055 admitted to Department 1 in Bed ID 9
+63,ADMISSION,Admission,56,2026-08-25T03:48:37.667173,Patient P0056 admitted to Department 5 in Bed ID 167
+64,ADMISSION,Admission,57,2026-08-22T13:06:01.667192,Patient P0057 admitted to Department 3 in Bed ID 94
+65,ADMISSION,Admission,58,2026-08-16T23:44:06.667210,Patient P0058 admitted to Department 5 in Bed ID 168
+66,ADMISSION,Admission,59,2026-08-11T13:59:46.667230,Patient P0059 admitted to Department 1 in Bed ID 25
+67,ADMISSION,Admission,60,2026-08-13T16:38:43.667254,Patient P0060 admitted to Department 1 in Bed ID 15
+68,ADMISSION,Admission,61,2026-08-25T06:02:06.667272,Patient P0061 admitted to Department 5 in Bed ID 185
+69,ADMISSION,Admission,62,2026-08-25T08:04:10.667292,Patient P0062 admitted to Department 1 in Bed ID 7
+70,ADMISSION,Admission,63,2026-08-21T16:09:06.667308,Patient P0063 admitted to Department 1 in Bed ID 19
+71,ADMISSION,Admission,64,2026-08-24T05:33:54.667324,Patient P0064 admitted to Department 5 in Bed ID 156
+72,ADMISSION,Admission,65,2026-08-24T12:47:40.667340,Patient P0065 admitted to Department 2 in Bed ID 61
+73,ADMISSION,Admission,66,2026-08-16T10:16:04.667358,Patient P0066 admitted to Department 1 in Bed ID 29
+74,ADMISSION,Admission,67,2026-08-12T22:18:01.667374,Patient P0067 admitted to Department 1 in Bed ID 13
+75,ADMISSION,Admission,68,2026-08-22T01:46:29.667391,Patient P0068 admitted to Department 2 in Bed ID 53
+76,ADMISSION,Admission,69,2026-08-20T20:20:59.667416,Patient P0069 admitted to Department 4 in Bed ID 113
+77,ADMISSION,Admission,70,2026-08-21T03:33:29.667433,Patient P0070 admitted to Department 4 in Bed ID 140
+78,ADMISSION,Admission,71,2026-08-21T19:22:17.667449,Patient P0071 admitted to Department 3 in Bed ID 99
+79,PATIENT_TRANSFER,PatientMovement,8,2026-08-24T08:48:59.667449,Patient P0071 transferred to Bed 99
+80,ADMISSION,Admission,72,2026-08-21T01:08:21.667475,Patient P0072 admitted to Department 3 in Bed ID 82
+81,PATIENT_TRANSFER,PatientMovement,9,2026-08-23T03:35:02.667475,Patient P0072 transferred to Bed 82
+82,ADMISSION,Admission,73,2026-08-25T04:31:00.667495,Patient P0073 admitted to Department 4 in Bed ID 142
+83,ADMISSION,Admission,74,2026-08-21T01:18:06.667512,Patient P0074 admitted to Department 3 in Bed ID 93
+84,PATIENT_TRANSFER,PatientMovement,10,2026-08-22T02:51:16.667512,Patient P0074 transferred to Bed 93
+85,ADMISSION,Admission,75,2026-08-20T09:18:53.667541,Patient P0075 admitted to Department 3 in Bed ID 84
+86,ADMISSION,Admission,76,2026-08-19T14:26:32.667561,Patient P0076 admitted to Department 5 in Bed ID 161
+87,ADMISSION,Admission,77,2026-08-19T06:40:33.667585,Patient P0077 admitted to Department 2 in Bed ID 68
+88,ADMISSION,Admission,78,2026-08-12T17:27:47.667601,Patient P0078 admitted to Department 1 in Bed ID 12
+89,ADMISSION,Admission,79,2026-08-13T14:09:56.667621,Patient P0079 admitted to Department 2 in Bed ID 69
+90,ADMISSION,Admission,80,2026-08-16T07:05:39.667639,Patient P0080 admitted to Department 2 in Bed ID 40
+91,ADMISSION,Admission,81,2026-08-20T14:39:11.667655,Patient P0081 admitted to Department 4 in Bed ID 115
+92,PATIENT_TRANSFER,PatientMovement,11,2026-08-22T17:06:28.667655,Patient P0081 transferred to Bed 115
+93,ADMISSION,Admission,82,2026-08-13T09:09:05.667679,Patient P0082 admitted to Department 4 in Bed ID 133
+94,ADMISSION,Admission,83,2026-08-17T19:26:27.667699,Patient P0083 admitted to Department 2 in Bed ID 54
+95,ADMISSION,Admission,84,2026-08-19T02:10:01.667715,Patient P0084 admitted to Department 4 in Bed ID 134
+96,ADMISSION,Admission,85,2026-08-23T07:07:28.667734,Patient P0085 admitted to Department 3 in Bed ID 110
+97,ADMISSION,Admission,86,2026-08-17T22:47:33.667752,Patient P0086 admitted to Department 3 in Bed ID 101
+98,PATIENT_TRANSFER,PatientMovement,12,2026-08-19T02:29:50.667752,Patient P0086 transferred to Bed 101
+99,ADMISSION,Admission,87,2026-08-24T17:49:43.667843,Patient P0087 admitted to Department 4 in Bed ID 131
+100,PATIENT_TRANSFER,PatientMovement,13,2026-08-26T16:52:48.667843,Patient P0087 transferred to Bed 131
+101,ADMISSION,Admission,88,2026-08-17T08:28:03.667865,Patient P0088 admitted to Department 3 in Bed ID 79
+102,ADMISSION,Admission,89,2026-08-17T04:10:00.667884,Patient P0089 admitted to Department 1 in Bed ID 10
+103,ADMISSION,Admission,90,2026-08-12T01:41:50.667903,Patient P0090 admitted to Department 1 in Bed ID 2
+104,PATIENT_TRANSFER,PatientMovement,14,2026-08-14T03:23:55.667903,Patient P0090 transferred to Bed 2
+105,ADMISSION,Admission,91,2026-08-25T00:55:25.667929,Patient P0091 admitted to Department 4 in Bed ID 114
+106,PATIENT_TRANSFER,PatientMovement,15,2026-08-26T03:42:43.667929,Patient P0091 transferred to Bed 114
+107,ADMISSION,Admission,92,2026-08-24T08:05:56.667949,Patient P0092 admitted to Department 1 in Bed ID 6
+108,PATIENT_TRANSFER,PatientMovement,16,2026-08-26T16:12:30.667949,Patient P0092 transferred to Bed 6
+109,ADMISSION,Admission,93,2026-08-11T21:17:51.667969,Patient P0093 admitted to Department 5 in Bed ID 174
+110,PATIENT_TRANSFER,PatientMovement,17,2026-08-13T13:59:04.667969,Patient P0093 transferred to Bed 174
+111,ADMISSION,Admission,94,2026-08-19T13:45:47.668003,Patient P0094 admitted to Department 4 in Bed ID 143
+112,ADMISSION,Admission,95,2026-08-13T14:13:41.668023,Patient P0095 admitted to Department 5 in Bed ID 162
+113,ADMISSION,Admission,96,2026-08-20T05:15:15.668039,Patient P0096 admitted to Department 2 in Bed ID 52
+114,ADMISSION,Admission,97,2026-08-19T04:26:15.668059,Patient P0097 admitted to Department 3 in Bed ID 80
+115,ADMISSION,Admission,98,2026-08-22T12:20:24.668082,Patient P0098 admitted to Department 1 in Bed ID 20
+116,PATIENT_TRANSFER,PatientMovement,18,2026-08-24T05:36:21.668082,Patient P0098 transferred to Bed 20
+117,ADMISSION,Admission,99,2026-08-18T14:30:12.668110,Patient P0099 admitted to Department 4 in Bed ID 124
+118,PATIENT_TRANSFER,PatientMovement,19,2026-08-21T08:52:48.668110,Patient P0099 transferred to Bed 124
+119,ADMISSION,Admission,100,2026-08-18T02:50:27.668131,Patient P0100 admitted to Department 4 in Bed ID 121
+120,ADMISSION,Admission,101,2026-08-20T01:52:13.668147,Patient P0101 admitted to Department 4 in Bed ID 116
+121,ADMISSION,Admission,102,2026-08-17T21:56:10.668163,Patient P0102 admitted to Department 5 in Bed ID 165
+122,PATIENT_TRANSFER,PatientMovement,20,2026-08-19T04:38:08.668163,Patient P0102 transferred to Bed 165
+123,ADMISSION,Admission,103,2026-08-13T13:55:08.668183,Patient P0103 admitted to Department 2 in Bed ID 73
+124,PATIENT_TRANSFER,PatientMovement,21,2026-08-16T09:42:48.668183,Patient P0103 transferred to Bed 73
+125,ADMISSION,Admission,104,2026-08-18T07:10:10.668209,Patient P0104 admitted to Department 5 in Bed ID 153
+126,ADMISSION,Admission,105,2026-08-18T23:44:47.668225,Patient P0105 admitted to Department 5 in Bed ID 149
+127,ADMISSION,Admission,106,2026-08-13T18:28:17.668244,Patient P0106 admitted to Department 4 in Bed ID 130
+128,ADMISSION,Admission,107,2026-08-17T04:22:29.668265,Patient P0107 admitted to Department 2 in Bed ID 57
+129,PATIENT_TRANSFER,PatientMovement,22,2026-08-20T03:31:28.668265,Patient P0107 transferred to Bed 57
+130,ADMISSION,Admission,108,2026-08-22T18:16:34.668289,Patient P0108 admitted to Department 2 in Bed ID 42
+131,ADMISSION,Admission,109,2026-08-18T10:21:08.668311,Patient P0109 admitted to Department 5 in Bed ID 173
+132,ADMISSION,Admission,110,2026-08-25T04:35:07.668330,Patient P0110 admitted to Department 1 in Bed ID 31
+133,PATIENT_TRANSFER,PatientMovement,23,2026-08-26T12:14:29.668330,Patient P0110 transferred to Bed 31
+134,ADMISSION,Admission,111,2026-08-20T17:10:31.668360,Patient P0111 admitted to Department 3 in Bed ID 100
+135,PATIENT_TRANSFER,PatientMovement,24,2026-08-22T18:57:24.668360,Patient P0111 transferred to Bed 100
+136,ADMISSION,Admission,112,2026-08-13T23:18:47.668380,Patient P0112 admitted to Department 3 in Bed ID 87
+137,ADMISSION,Admission,113,2026-08-23T23:04:56.668396,Patient P0113 admitted to Department 4 in Bed ID 126
+138,ADMISSION,Admission,114,2026-08-19T12:50:08.668418,Patient P0114 admitted to Department 2 in Bed ID 46
+139,ADMISSION,Admission,115,2026-08-11T14:43:07.668433,Patient P0115 admitted to Department 2 in Bed ID 72
+140,PATIENT_TRANSFER,PatientMovement,25,2026-08-12T20:23:14.668433,Patient P0115 transferred to Bed 72
+141,ADMISSION,Admission,116,2026-08-17T00:59:18.668456,Patient P0116 admitted to Department 1 in Bed ID 1
+142,ADMISSION,Admission,117,2026-08-15T19:11:24.668479,Patient P0117 admitted to Department 4 in Bed ID 122
+143,ADMISSION,Admission,118,2026-08-13T01:17:40.668497,Patient P0118 admitted to Department 4 in Bed ID 135
+144,ADMISSION,Admission,119,2026-08-11T12:46:40.668518,Patient P0119 admitted to Department 3 in Bed ID 90
+145,PATIENT_TRANSFER,PatientMovement,26,2026-08-12T19:49:21.668518,Patient P0119 transferred to Bed 90
+146,ADMISSION,Admission,120,2026-08-18T22:34:09.668543,Patient P0120 admitted to Department 2 in Bed ID 64
+147,ADMISSION,Admission,121,2026-08-16T19:07:09.668560,Patient P0121 admitted to Department 2 in Bed ID 65
+148,PATIENT_TRANSFER,PatientMovement,27,2026-08-18T13:27:48.668560,Patient P0121 transferred to Bed 65
+149,ADMISSION,Admission,122,2026-08-12T01:18:52.668583,Patient P0122 admitted to Department 3 in Bed ID 103
+150,ADMISSION,Admission,123,2026-08-21T03:16:10.668603,Patient P0123 admitted to Department 2 in Bed ID 49
+151,ADMISSION,Admission,124,2026-08-22T09:37:18.668624,Patient P0124 admitted to Department 4 in Bed ID 125
+152,PATIENT_TRANSFER,PatientMovement,28,2026-08-23T15:53:18.668624,Patient P0124 transferred to Bed 125
+153,ADMISSION,Admission,125,2026-08-17T08:35:27.668645,Patient P0125 admitted to Department 1 in Bed ID 14
+154,PATIENT_TRANSFER,PatientMovement,29,2026-08-19T01:25:25.668645,Patient P0125 transferred to Bed 14
+155,ADMISSION,Admission,126,2026-08-16T20:50:57.668668,Patient P0126 admitted to Department 2 in Bed ID 60
+156,ADMISSION,Admission,127,2026-08-19T15:07:27.668686,Patient P0127 admitted to Department 5 in Bed ID 154
+157,PATIENT_TRANSFER,PatientMovement,30,2026-08-21T00:03:50.668686,Patient P0127 transferred to Bed 154
+158,ADMISSION,Admission,128,2026-08-15T02:28:00.668709,Patient P0128 admitted to Department 4 in Bed ID 148
+159,ADMISSION,Admission,129,2026-08-16T22:27:03.668729,Patient P0129 admitted to Department 1 in Bed ID 36
+160,ADMISSION,Admission,130,2026-08-13T09:22:37.668745,Patient P0130 admitted to Department 1 in Bed ID 4
+161,ADMISSION,Admission,131,2026-08-20T19:08:19.668764,Patient P0131 admitted to Department 2 in Bed ID 50
+162,ADMISSION,Admission,132,2026-08-22T12:04:44.668782,Patient P0132 admitted to Department 5 in Bed ID 170
+163,ADMISSION,Admission,133,2026-08-13T07:54:35.668808,Patient P0133 admitted to Department 2 in Bed ID 74
+164,PATIENT_TRANSFER,PatientMovement,31,2026-08-15T20:38:07.668808,Patient P0133 transferred to Bed 74
+165,ADMISSION,Admission,134,2026-08-22T14:04:17.668834,Patient P0134 admitted to Department 4 in Bed ID 141
+166,ADMISSION,Admission,135,2026-08-23T21:13:58.668855,Patient P0135 admitted to Department 1 in Bed ID 30
+167,ADMISSION,Admission,136,2026-08-25T06:43:16.668874,Patient P0136 admitted to Department 4 in Bed ID 145
+168,PATIENT_TRANSFER,PatientMovement,32,2026-08-26T09:59:45.668874,Patient P0136 transferred to Bed 145
+169,ADMISSION,Admission,137,2026-08-16T15:11:23.668894,Patient P0137 admitted to Department 3 in Bed ID 102
+170,ADMISSION,Admission,138,2026-08-18T17:11:48.668915,Patient P0138 admitted to Department 1 in Bed ID 21
+171,ADMISSION,Admission,139,2026-08-22T13:01:34.668930,Patient P0139 admitted to Department 3 in Bed ID 88
+172,PATIENT_TRANSFER,PatientMovement,33,2026-08-25T04:30:21.668930,Patient P0139 transferred to Bed 88
+173,ADMISSION,Admission,140,2026-08-17T11:52:18.668957,Patient P0140 admitted to Department 4 in Bed ID 138
+174,DISCHARGE,Discharge,1,2026-07-17T05:25:39.668974,Patient P0501 discharged from Department 5
+175,DISCHARGE,Discharge,2,2026-07-27T10:07:06.669003,Patient P0171 discharged from Department 2
+176,DISCHARGE,Discharge,3,2026-08-01T00:14:48.669023,Patient P0224 discharged from Department 3
+177,DISCHARGE,Discharge,4,2026-07-24T01:21:31.669046,Patient P0369 discharged from Department 4
+178,DISCHARGE,Discharge,5,2026-08-23T06:39:45.669064,Patient P0547 discharged from Department 5
+179,DISCHARGE,Discharge,6,2026-08-20T16:59:55.669082,Patient P0217 discharged from Department 5
+180,DISCHARGE,Discharge,7,2026-08-14T11:06:25.669100,Patient P0538 discharged from Department 5
+181,DISCHARGE,Discharge,8,2026-07-27T23:53:07.669119,Patient P0357 discharged from Department 1
+182,DISCHARGE,Discharge,9,2026-08-03T08:20:29.669134,Patient P0561 discharged from Department 1
+183,DISCHARGE,Discharge,10,2026-07-23T13:35:48.669155,Patient P0238 discharged from Department 5
+184,DISCHARGE,Discharge,11,2026-08-09T13:20:28.669180,Patient P0930 discharged from Department 4
+185,DISCHARGE,Discharge,12,2026-08-17T14:32:04.669199,Patient P0648 discharged from Department 1
+186,DISCHARGE,Discharge,13,2026-07-24T17:05:40.669223,Patient P0861 discharged from Department 3
+187,DISCHARGE,Discharge,14,2026-08-24T16:45:22.669241,Patient P0917 discharged from Department 1
+188,DISCHARGE,Discharge,15,2026-07-16T18:25:48.669257,Patient P0716 discharged from Department 3
+189,DISCHARGE,Discharge,16,2026-07-24T03:06:09.669278,Patient P0452 discharged from Department 2
+190,DISCHARGE,Discharge,17,2026-08-01T03:18:33.669297,Patient P0642 discharged from Department 4
+191,DISCHARGE,Discharge,18,2026-08-02T22:53:03.669315,Patient P0509 discharged from Department 3
+192,DISCHARGE,Discharge,19,2026-07-21T01:38:28.669335,Patient P0624 discharged from Department 5
+193,DISCHARGE,Discharge,20,2026-07-31T00:12:08.669352,Patient P0805 discharged from Department 3
+194,DISCHARGE,Discharge,21,2026-08-22T21:43:13.669372,Patient P0855 discharged from Department 1
+195,DISCHARGE,Discharge,22,2026-08-20T07:04:36.669392,Patient P0722 discharged from Department 2
+196,DISCHARGE,Discharge,23,2026-08-06T01:57:40.669413,Patient P0203 discharged from Department 5
+197,DISCHARGE,Discharge,24,2026-07-26T06:52:46.669431,Patient P0581 discharged from Department 2
+198,DISCHARGE,Discharge,25,2026-08-02T10:26:05.669449,Patient P0669 discharged from Department 4
+199,DISCHARGE,Discharge,26,2026-07-25T21:05:26.669466,Patient P0580 discharged from Department 5
+200,DISCHARGE,Discharge,27,2026-08-13T00:22:25.669489,Patient P0881 discharged from Department 1
+201,DISCHARGE,Discharge,28,2026-08-10T16:09:25.669508,Patient P0291 discharged from Department 1
+202,DISCHARGE,Discharge,29,2026-07-20T21:51:54.669528,Patient P0727 discharged from Department 1
+203,DISCHARGE,Discharge,30,2026-08-04T02:27:40.669551,Patient P0956 discharged from Department 3
+204,DISCHARGE,Discharge,31,2026-08-11T08:07:10.669568,Patient P0455 discharged from Department 3
+205,DISCHARGE,Discharge,32,2026-07-26T15:38:44.669588,Patient P0343 discharged from Department 4
+206,DISCHARGE,Discharge,33,2026-07-26T16:05:11.669611,Patient P0848 discharged from Department 1
+207,DISCHARGE,Discharge,34,2026-07-22T07:11:59.669629,Patient P0986 discharged from Department 4
+208,DISCHARGE,Discharge,35,2026-07-24T11:52:19.669645,Patient P0894 discharged from Department 1
+209,DISCHARGE,Discharge,36,2026-08-12T01:08:45.669663,Patient P0463 discharged from Department 1
+210,DISCHARGE,Discharge,37,2026-08-08T06:50:53.669681,Patient P0353 discharged from Department 3
+211,DISCHARGE,Discharge,38,2026-08-05T10:56:42.669701,Patient P0608 discharged from Department 4
+212,DISCHARGE,Discharge,39,2026-08-20T20:32:00.669723,Patient P0332 discharged from Department 2
+213,DISCHARGE,Discharge,40,2026-07-19T23:16:35.669741,Patient P0939 discharged from Department 3
+214,DISCHARGE,Discharge,41,2026-08-19T20:46:33.669757,Patient P0516 discharged from Department 4
+215,DISCHARGE,Discharge,42,2026-08-19T00:46:05.669775,Patient P0228 discharged from Department 5
+216,DISCHARGE,Discharge,43,2026-08-10T18:08:32.669793,Patient P0665 discharged from Department 4
+217,DISCHARGE,Discharge,44,2026-08-17T06:28:56.669815,Patient P0938 discharged from Department 5
+218,DISCHARGE,Discharge,45,2026-08-04T15:37:03.669834,Patient P0346 discharged from Department 2
+219,DISCHARGE,Discharge,46,2026-07-26T20:15:31.669852,Patient P0813 discharged from Department 2
+220,DISCHARGE,Discharge,47,2026-07-24T12:02:25.669869,Patient P0760 discharged from Department 5
+221,DISCHARGE,Discharge,48,2026-07-27T20:20:53.669886,Patient P0991 discharged from Department 3
+222,DISCHARGE,Discharge,49,2026-08-22T11:10:24.669904,Patient P0505 discharged from Department 1
+223,DISCHARGE,Discharge,50,2026-08-26T11:39:40.669926,Patient P0458 discharged from Department 1
+224,DISCHARGE,Discharge,51,2026-08-24T22:07:27.669940,Patient P0370 discharged from Department 5
+225,DISCHARGE,Discharge,52,2026-07-16T21:32:39.669963,Patient P0434 discharged from Department 3
+226,DISCHARGE,Discharge,53,2026-08-14T12:48:43.669978,Patient P0525 discharged from Department 1
+227,DISCHARGE,Discharge,54,2026-08-10T18:10:40.669999,Patient P0998 discharged from Department 3
+228,DISCHARGE,Discharge,55,2026-07-16T01:51:28.670017,Patient P0195 discharged from Department 3
+229,DISCHARGE,Discharge,56,2026-07-28T11:18:42.670041,Patient P0846 discharged from Department 5
+230,DISCHARGE,Discharge,57,2026-08-27T05:21:13.670057,Patient P0497 discharged from Department 3
+231,DISCHARGE,Discharge,58,2026-08-03T01:28:39.670075,Patient P0657 discharged from Department 5
+232,DISCHARGE,Discharge,59,2026-08-12T15:49:33.670093,Patient P0923 discharged from Department 3
+233,DISCHARGE,Discharge,60,2026-08-05T15:29:54.670114,Patient P0722 discharged from Department 3
+234,DISCHARGE,Discharge,61,2026-08-16T18:25:02.670133,Patient P0664 discharged from Department 5
+235,DISCHARGE,Discharge,62,2026-08-24T08:58:37.670151,Patient P0718 discharged from Department 2
+236,DISCHARGE,Discharge,63,2026-08-08T18:22:52.670171,Patient P0719 discharged from Department 1
+237,DISCHARGE,Discharge,64,2026-08-04T01:06:06.670188,Patient P0362 discharged from Department 2
+238,DISCHARGE,Discharge,65,2026-08-07T18:11:54.670207,Patient P0570 discharged from Department 4
+239,DISCHARGE,Discharge,66,2026-07-28T19:12:59.670226,Patient P0627 discharged from Department 4
+240,DISCHARGE,Discharge,67,2026-07-27T22:45:28.670252,Patient P0313 discharged from Department 5
+241,DISCHARGE,Discharge,68,2026-07-23T03:58:11.670273,Patient P0541 discharged from Department 2
+242,DISCHARGE,Discharge,69,2026-08-16T12:43:38.670287,Patient P0531 discharged from Department 3
+243,DISCHARGE,Discharge,70,2026-08-22T00:33:36.670307,Patient P0558 discharged from Department 3
+244,DISCHARGE,Discharge,71,2026-07-26T15:24:07.670326,Patient P0984 discharged from Department 1
+245,DISCHARGE,Discharge,72,2026-08-01T21:16:37.670347,Patient P0813 discharged from Department 5
+246,DISCHARGE,Discharge,73,2026-08-18T17:46:48.670367,Patient P0709 discharged from Department 5
+247,DISCHARGE,Discharge,74,2026-08-02T09:07:32.670384,Patient P0894 discharged from Department 2
+248,DISCHARGE,Discharge,75,2026-08-21T13:26:14.670402,Patient P0659 discharged from Department 2
+249,DISCHARGE,Discharge,76,2026-08-10T19:36:58.670423,Patient P0848 discharged from Department 5
+250,DISCHARGE,Discharge,77,2026-08-16T00:26:40.670443,Patient P0794 discharged from Department 2
+251,DISCHARGE,Discharge,78,2026-07-20T23:32:36.670459,Patient P0313 discharged from Department 2
+252,DISCHARGE,Discharge,79,2026-08-03T07:12:07.670477,Patient P0813 discharged from Department 3
+253,DISCHARGE,Discharge,80,2026-08-11T03:01:06.670496,Patient P0295 discharged from Department 5
+254,DISCHARGE,Discharge,81,2026-08-07T22:54:46.670516,Patient P0941 discharged from Department 4
+255,DISCHARGE,Discharge,82,2026-08-07T05:38:55.670539,Patient P0663 discharged from Department 5
+256,DISCHARGE,Discharge,83,2026-07-24T07:19:25.670558,Patient P0819 discharged from Department 2
+257,DISCHARGE,Discharge,84,2026-07-30T14:30:33.670583,Patient P0713 discharged from Department 4
+258,DISCHARGE,Discharge,85,2026-08-26T03:34:43.670601,Patient P0746 discharged from Department 3
+259,DISCHARGE,Discharge,86,2026-08-16T02:35:53.670623,Patient P0387 discharged from Department 4
+260,DISCHARGE,Discharge,87,2026-08-18T01:57:17.670642,Patient P0390 discharged from Department 4
+261,DISCHARGE,Discharge,88,2026-08-07T04:58:41.670663,Patient P0384 discharged from Department 4
+262,DISCHARGE,Discharge,89,2026-07-20T13:46:30.670685,Patient P0529 discharged from Department 1
+263,DISCHARGE,Discharge,90,2026-08-23T06:48:43.670703,Patient P0995 discharged from Department 4
+264,DISCHARGE,Discharge,91,2026-07-25T05:22:47.670721,Patient P0236 discharged from Department 5
+265,DISCHARGE,Discharge,92,2026-07-27T05:05:29.670742,Patient P0538 discharged from Department 4
+266,DISCHARGE,Discharge,93,2026-08-06T00:44:58.670759,Patient P0885 discharged from Department 5
+267,DISCHARGE,Discharge,94,2026-08-10T05:26:51.670781,Patient P0391 discharged from Department 1
+268,DISCHARGE,Discharge,95,2026-07-30T12:44:37.670803,Patient P0211 discharged from Department 1
+269,DISCHARGE,Discharge,96,2026-07-26T11:38:27.670824,Patient P0747 discharged from Department 3
+270,DISCHARGE,Discharge,97,2026-08-16T12:11:05.670844,Patient P0936 discharged from Department 5
+271,DISCHARGE,Discharge,98,2026-07-22T00:59:41.670864,Patient P0979 discharged from Department 3
+272,DISCHARGE,Discharge,99,2026-08-24T07:27:36.670882,Patient P0649 discharged from Department 1
+273,DISCHARGE,Discharge,100,2026-07-23T12:20:18.670904,Patient P0944 discharged from Department 5
+274,DISCHARGE,Discharge,101,2026-07-30T02:29:19.670920,Patient P0387 discharged from Department 4
+275,DISCHARGE,Discharge,102,2026-08-07T07:10:22.670938,Patient P0673 discharged from Department 1
+276,DISCHARGE,Discharge,103,2026-08-07T12:28:48.670956,Patient P0934 discharged from Department 1
+277,DISCHARGE,Discharge,104,2026-08-25T23:35:43.670974,Patient P0980 discharged from Department 3
+278,DISCHARGE,Discharge,105,2026-08-08T02:55:31.670992,Patient P0668 discharged from Department 1
+279,DISCHARGE,Discharge,106,2026-08-12T09:45:28.671011,Patient P0787 discharged from Department 2
+280,DISCHARGE,Discharge,107,2026-07-27T04:08:25.671029,Patient P0612 discharged from Department 1
+281,DISCHARGE,Discharge,108,2026-08-12T18:02:02.671053,Patient P0384 discharged from Department 3
+282,DISCHARGE,Discharge,109,2026-08-02T02:10:46.671077,Patient P0360 discharged from Department 4
+283,DISCHARGE,Discharge,110,2026-08-13T01:42:16.671096,Patient P0597 discharged from Department 4
+284,DISCHARGE,Discharge,111,2026-07-25T02:59:57.671118,Patient P0957 discharged from Department 5
+285,DISCHARGE,Discharge,112,2026-08-12T02:24:46.671135,Patient P0766 discharged from Department 1
+286,DISCHARGE,Discharge,113,2026-08-17T04:42:38.671155,Patient P0439 discharged from Department 4
+287,DISCHARGE,Discharge,114,2026-08-02T02:00:45.671171,Patient P0785 discharged from Department 3
+288,DISCHARGE,Discharge,115,2026-08-10T05:10:12.671189,Patient P0559 discharged from Department 3
+289,DISCHARGE,Discharge,116,2026-08-10T02:16:20.671210,Patient P0949 discharged from Department 1
+290,DISCHARGE,Discharge,117,2026-08-05T00:42:01.671226,Patient P0416 discharged from Department 2
+291,DISCHARGE,Discharge,118,2026-08-13T16:26:57.671247,Patient P0821 discharged from Department 3
+292,DISCHARGE,Discharge,119,2026-08-18T17:48:02.671271,Patient P0724 discharged from Department 4
+293,DISCHARGE,Discharge,120,2026-07-22T11:36:33.671287,Patient P0331 discharged from Department 4
+294,DISCHARGE,Discharge,121,2026-07-31T10:10:30.671309,Patient P0495 discharged from Department 1
+295,DISCHARGE,Discharge,122,2026-07-19T13:48:15.671329,Patient P0760 discharged from Department 2
+296,DISCHARGE,Discharge,123,2026-08-21T06:27:08.671352,Patient P0648 discharged from Department 1
+297,DISCHARGE,Discharge,124,2026-08-03T12:07:49.671371,Patient P0956 discharged from Department 3
+298,DISCHARGE,Discharge,125,2026-08-07T07:48:08.671387,Patient P0882 discharged from Department 3
+299,DISCHARGE,Discharge,126,2026-07-17T05:00:59.671413,Patient P0626 discharged from Department 1
+300,DISCHARGE,Discharge,127,2026-08-07T21:45:30.671430,Patient P0540 discharged from Department 5
+301,DISCHARGE,Discharge,128,2026-07-15T01:59:50.671451,Patient P0996 discharged from Department 5
+302,DISCHARGE,Discharge,129,2026-07-22T17:08:14.671469,Patient P0451 discharged from Department 3
+303,DISCHARGE,Discharge,130,2026-07-21T22:33:35.671488,Patient P0335 discharged from Department 3
+304,DISCHARGE,Discharge,131,2026-07-22T01:16:27.671506,Patient P0891 discharged from Department 5
+305,DISCHARGE,Discharge,132,2026-08-24T05:11:15.671526,Patient P0325 discharged from Department 2
+306,DISCHARGE,Discharge,133,2026-08-28T17:06:00.671545,Patient P0318 discharged from Department 2
+307,DISCHARGE,Discharge,134,2026-07-18T19:30:51.671569,Patient P0932 discharged from Department 1
+308,DISCHARGE,Discharge,135,2026-07-20T04:27:52.671584,Patient P0546 discharged from Department 1
+309,DISCHARGE,Discharge,136,2026-08-09T23:54:26.671604,Patient P0560 discharged from Department 3
+310,DISCHARGE,Discharge,137,2026-08-23T05:52:17.671619,Patient P0992 discharged from Department 3
+311,DISCHARGE,Discharge,138,2026-08-07T16:57:07.671637,Patient P0278 discharged from Department 1
+312,DISCHARGE,Discharge,139,2026-08-20T01:01:02.671657,Patient P0930 discharged from Department 4
+313,DISCHARGE,Discharge,140,2026-08-15T08:20:54.671675,Patient P0176 discharged from Department 5
+314,DISCHARGE,Discharge,141,2026-08-23T01:34:47.671690,Patient P0372 discharged from Department 2
+315,DISCHARGE,Discharge,142,2026-07-21T09:16:24.671708,Patient P0962 discharged from Department 5
+316,DISCHARGE,Discharge,143,2026-07-19T23:35:13.671723,Patient P0303 discharged from Department 4
+317,DISCHARGE,Discharge,144,2026-07-26T07:49:01.671741,Patient P0449 discharged from Department 5
+318,DISCHARGE,Discharge,145,2026-08-22T00:27:46.671763,Patient P0226 discharged from Department 4
+319,DISCHARGE,Discharge,146,2026-08-01T12:04:01.671784,Patient P0562 discharged from Department 1
+320,DISCHARGE,Discharge,147,2026-08-21T13:52:28.671799,Patient P0519 discharged from Department 3
+321,DISCHARGE,Discharge,148,2026-08-22T07:32:42.671822,Patient P0525 discharged from Department 4
+322,DISCHARGE,Discharge,149,2026-08-23T10:02:08.671840,Patient P0544 discharged from Department 4
+323,DISCHARGE,Discharge,150,2026-08-08T07:11:52.671857,Patient P0727 discharged from Department 5
+324,DISCHARGE,Discharge,151,2026-08-26T10:31:10.671873,Patient P0633 discharged from Department 5
+325,DISCHARGE,Discharge,152,2026-08-12T15:54:33.671893,Patient P0883 discharged from Department 2
+326,DISCHARGE,Discharge,153,2026-08-17T15:21:31.671913,Patient P0941 discharged from Department 3
+327,DISCHARGE,Discharge,154,2026-08-15T10:00:44.671933,Patient P0318 discharged from Department 3
+328,DISCHARGE,Discharge,155,2026-07-31T16:05:54.671956,Patient P0768 discharged from Department 5
+329,DISCHARGE,Discharge,156,2026-08-06T02:59:54.671975,Patient P0792 discharged from Department 1
+330,DISCHARGE,Discharge,157,2026-08-03T10:30:31.671994,Patient P0850 discharged from Department 3
+331,DISCHARGE,Discharge,158,2026-08-04T03:37:30.672015,Patient P0210 discharged from Department 3
+332,DISCHARGE,Discharge,159,2026-08-29T02:27:00.672036,Patient P0598 discharged from Department 4
+333,DISCHARGE,Discharge,160,2026-07-24T02:56:38.672054,Patient P0388 discharged from Department 4
+334,DISCHARGE,Discharge,161,2026-08-11T14:08:32.672076,Patient P0374 discharged from Department 2
+335,DISCHARGE,Discharge,162,2026-08-01T20:33:11.672095,Patient P0145 discharged from Department 4
+336,DISCHARGE,Discharge,163,2026-07-29T22:23:42.672116,Patient P0244 discharged from Department 5
+337,DISCHARGE,Discharge,164,2026-07-21T19:31:29.672135,Patient P0279 discharged from Department 4
+338,DISCHARGE,Discharge,165,2026-08-10T17:49:23.672156,Patient P0525 discharged from Department 3
+339,DISCHARGE,Discharge,166,2026-08-27T11:50:26.672175,Patient P0669 discharged from Department 1
+340,DISCHARGE,Discharge,167,2026-08-06T02:10:17.672196,Patient P0959 discharged from Department 1
+341,DISCHARGE,Discharge,168,2026-08-18T01:05:38.672214,Patient P0510 discharged from Department 1
+342,DISCHARGE,Discharge,169,2026-08-16T00:01:10.672232,Patient P0588 discharged from Department 5
+343,DISCHARGE,Discharge,170,2026-08-23T17:38:28.672249,Patient P0617 discharged from Department 2
+344,DISCHARGE,Discharge,171,2026-08-21T09:09:21.672264,Patient P0985 discharged from Department 4
+345,DISCHARGE,Discharge,172,2026-08-26T10:55:20.672279,Patient P0444 discharged from Department 5
+346,DISCHARGE,Discharge,173,2026-08-10T05:59:55.672298,Patient P0179 discharged from Department 2
+347,DISCHARGE,Discharge,174,2026-08-24T17:03:25.672316,Patient P0973 discharged from Department 5
+348,DISCHARGE,Discharge,175,2026-08-13T16:14:33.672338,Patient P0986 discharged from Department 1
+349,DISCHARGE,Discharge,176,2026-07-26T08:53:58.672355,Patient P0853 discharged from Department 4
+350,DISCHARGE,Discharge,177,2026-08-18T05:15:14.672376,Patient P0790 discharged from Department 5
+351,DISCHARGE,Discharge,178,2026-07-26T20:13:14.672394,Patient P0388 discharged from Department 3
+352,DISCHARGE,Discharge,179,2026-07-24T19:36:20.672413,Patient P0393 discharged from Department 3
+353,DISCHARGE,Discharge,180,2026-08-14T13:57:21.672431,Patient P0364 discharged from Department 4
+354,DISCHARGE,Discharge,181,2026-08-12T18:59:46.672449,Patient P0880 discharged from Department 1
+355,DISCHARGE,Discharge,182,2026-08-10T23:10:04.672464,Patient P0584 discharged from Department 2
+356,DISCHARGE,Discharge,183,2026-08-10T01:09:19.672479,Patient P0234 discharged from Department 1
+357,DISCHARGE,Discharge,184,2026-08-22T00:28:28.672500,Patient P0791 discharged from Department 4
+358,DISCHARGE,Discharge,185,2026-08-18T01:57:08.672526,Patient P0493 discharged from Department 2
+359,DISCHARGE,Discharge,186,2026-08-15T22:51:05.672551,Patient P0582 discharged from Department 4
+360,DISCHARGE,Discharge,187,2026-07-19T09:00:37.672564,Patient P0406 discharged from Department 1
+361,DISCHARGE,Discharge,188,2026-08-15T04:45:46.672579,Patient P0643 discharged from Department 2
+362,DISCHARGE,Discharge,189,2026-07-31T19:12:38.672600,Patient P0730 discharged from Department 3
+363,DISCHARGE,Discharge,190,2026-08-15T10:00:30.672621,Patient P0654 discharged from Department 1
+364,DISCHARGE,Discharge,191,2026-08-20T22:23:33.672640,Patient P0590 discharged from Department 5
+365,DISCHARGE,Discharge,192,2026-07-29T05:40:12.672655,Patient P0616 discharged from Department 5
+366,DISCHARGE,Discharge,193,2026-07-16T05:28:52.672672,Patient P0166 discharged from Department 1
+367,DISCHARGE,Discharge,194,2026-08-15T11:10:55.672690,Patient P0746 discharged from Department 2
+368,DISCHARGE,Discharge,195,2026-08-13T00:27:36.672707,Patient P0765 discharged from Department 5
+369,DISCHARGE,Discharge,196,2026-08-07T15:17:00.672732,Patient P0472 discharged from Department 1
+370,DISCHARGE,Discharge,197,2026-08-01T14:14:58.672752,Patient P0508 discharged from Department 1
+371,DISCHARGE,Discharge,198,2026-08-23T04:55:38.672770,Patient P0276 discharged from Department 4
+372,DISCHARGE,Discharge,199,2026-07-20T01:41:21.672787,Patient P0333 discharged from Department 1
+373,DISCHARGE,Discharge,200,2026-08-15T06:31:36.672802,Patient P0698 discharged from Department 5
+374,DISCHARGE,Discharge,201,2026-08-11T10:14:13.672824,Patient P0862 discharged from Department 2
+375,DISCHARGE,Discharge,202,2026-07-29T09:37:42.672842,Patient P0874 discharged from Department 5
+376,DISCHARGE,Discharge,203,2026-08-10T18:40:50.672864,Patient P0825 discharged from Department 1
+377,DISCHARGE,Discharge,204,2026-08-13T17:04:56.672882,Patient P0189 discharged from Department 3
+378,DISCHARGE,Discharge,205,2026-08-25T14:58:45.672905,Patient P0429 discharged from Department 4
+379,DISCHARGE,Discharge,206,2026-08-21T09:22:15.672923,Patient P0857 discharged from Department 2
+380,DISCHARGE,Discharge,207,2026-08-15T06:08:55.672939,Patient P0336 discharged from Department 4
+381,DISCHARGE,Discharge,208,2026-08-03T13:39:33.672958,Patient P0420 discharged from Department 4
+382,DISCHARGE,Discharge,209,2026-07-16T15:23:48.672978,Patient P0774 discharged from Department 5
+383,DISCHARGE,Discharge,210,2026-08-23T20:47:20.672996,Patient P0414 discharged from Department 4
+384,DISCHARGE,Discharge,211,2026-07-26T01:13:24.673013,Patient P0939 discharged from Department 5
+385,DISCHARGE,Discharge,212,2026-07-31T09:56:20.673038,Patient P0412 discharged from Department 1
+386,DISCHARGE,Discharge,213,2026-08-02T22:12:54.673056,Patient P0190 discharged from Department 4
+387,DISCHARGE,Discharge,214,2026-07-17T12:19:03.673074,Patient P0874 discharged from Department 1
+388,DISCHARGE,Discharge,215,2026-07-20T09:12:26.673091,Patient P0187 discharged from Department 4
+389,DISCHARGE,Discharge,216,2026-07-26T10:34:54.673110,Patient P0967 discharged from Department 3
+390,DISCHARGE,Discharge,217,2026-08-14T02:35:50.673128,Patient P0660 discharged from Department 4
+391,DISCHARGE,Discharge,218,2026-08-10T07:16:49.673147,Patient P0721 discharged from Department 5
+392,DISCHARGE,Discharge,219,2026-07-29T22:58:18.673164,Patient P0412 discharged from Department 2
+393,DISCHARGE,Discharge,220,2026-08-11T19:01:12.673182,Patient P0763 discharged from Department 5
+394,DISCHARGE,Discharge,221,2026-08-18T04:03:15.673203,Patient P0701 discharged from Department 1
+395,DISCHARGE,Discharge,222,2026-08-22T16:38:13.673222,Patient P0784 discharged from Department 1
+396,DISCHARGE,Discharge,223,2026-08-01T08:05:06.673242,Patient P0838 discharged from Department 5
+397,DISCHARGE,Discharge,224,2026-08-08T00:46:12.673261,Patient P0625 discharged from Department 2
+398,DISCHARGE,Discharge,225,2026-07-30T09:23:07.673283,Patient P0384 discharged from Department 2
+399,DISCHARGE,Discharge,226,2026-08-22T05:32:05.673307,Patient P0333 discharged from Department 4
+400,DISCHARGE,Discharge,227,2026-07-26T19:03:43.673326,Patient P0754 discharged from Department 2
+401,DISCHARGE,Discharge,228,2026-08-07T18:12:54.673346,Patient P0338 discharged from Department 5
+402,DISCHARGE,Discharge,229,2026-07-24T20:20:15.673365,Patient P0277 discharged from Department 2
+403,DISCHARGE,Discharge,230,2026-08-03T05:44:57.673381,Patient P0479 discharged from Department 4
+404,DISCHARGE,Discharge,231,2026-08-17T23:06:22.673396,Patient P0284 discharged from Department 4
+405,DISCHARGE,Discharge,232,2026-08-09T07:51:09.673435,Patient P0258 discharged from Department 3
+406,DISCHARGE,Discharge,233,2026-08-24T09:00:57.673456,Patient P0393 discharged from Department 3
+407,DISCHARGE,Discharge,234,2026-08-09T14:31:22.673477,Patient P0802 discharged from Department 2
+408,DISCHARGE,Discharge,235,2026-08-20T07:40:46.673499,Patient P0950 discharged from Department 1
+409,DISCHARGE,Discharge,236,2026-08-19T11:03:08.673520,Patient P0413 discharged from Department 5
+410,DISCHARGE,Discharge,237,2026-08-13T20:50:21.673541,Patient P0470 discharged from Department 3
+411,DISCHARGE,Discharge,238,2026-08-07T20:53:59.673564,Patient P0149 discharged from Department 3
+412,DISCHARGE,Discharge,239,2026-08-05T07:45:54.673580,Patient P0503 discharged from Department 3
+413,DISCHARGE,Discharge,240,2026-07-19T03:40:57.673599,Patient P0514 discharged from Department 5
+414,DISCHARGE,Discharge,241,2026-08-24T20:09:18.673617,Patient P0692 discharged from Department 3
+415,DISCHARGE,Discharge,242,2026-08-23T04:57:02.673637,Patient P0577 discharged from Department 5
+416,DISCHARGE,Discharge,243,2026-08-13T07:25:35.673660,Patient P0141 discharged from Department 5
+417,DISCHARGE,Discharge,244,2026-08-13T07:08:18.673676,Patient P0203 discharged from Department 4
+418,DISCHARGE,Discharge,245,2026-07-21T07:40:07.673696,Patient P0709 discharged from Department 4
+419,DISCHARGE,Discharge,246,2026-08-21T03:55:30.673720,Patient P0798 discharged from Department 3
+420,DISCHARGE,Discharge,247,2026-08-20T07:15:37.673738,Patient P0825 discharged from Department 4
+421,DISCHARGE,Discharge,248,2026-07-29T16:48:09.673755,Patient P0658 discharged from Department 2
+422,DISCHARGE,Discharge,249,2026-07-21T19:18:23.673776,Patient P0842 discharged from Department 3
+423,DISCHARGE,Discharge,250,2026-08-19T12:57:57.673794,Patient P0179 discharged from Department 5
+424,DISCHARGE,Discharge,251,2026-07-26T05:55:23.673812,Patient P0393 discharged from Department 5
+425,DISCHARGE,Discharge,252,2026-07-22T23:18:39.673830,Patient P0368 discharged from Department 3
+426,DISCHARGE,Discharge,253,2026-08-12T04:51:17.673848,Patient P0432 discharged from Department 5
+427,DISCHARGE,Discharge,254,2026-08-26T22:30:58.673868,Patient P0710 discharged from Department 4
+428,DISCHARGE,Discharge,255,2026-08-15T00:52:40.673887,Patient P0198 discharged from Department 5
+429,DISCHARGE,Discharge,256,2026-08-09T07:49:54.673906,Patient P0550 discharged from Department 5
+430,DISCHARGE,Discharge,257,2026-08-19T12:16:42.673924,Patient P0719 discharged from Department 2
+431,DISCHARGE,Discharge,258,2026-08-19T13:52:49.673944,Patient P0244 discharged from Department 4
+432,DISCHARGE,Discharge,259,2026-08-05T02:55:23.673962,Patient P0871 discharged from Department 2
+433,DISCHARGE,Discharge,260,2026-08-13T19:56:38.673979,Patient P0946 discharged from Department 1
+434,DISCHARGE,Discharge,261,2026-07-27T10:36:26.673996,Patient P0800 discharged from Department 2
+435,DISCHARGE,Discharge,262,2026-08-08T00:10:24.674016,Patient P0958 discharged from Department 2
+436,DISCHARGE,Discharge,263,2026-07-29T04:01:16.674037,Patient P0891 discharged from Department 2
+437,DISCHARGE,Discharge,264,2026-08-14T16:00:02.674057,Patient P0892 discharged from Department 2
+438,DISCHARGE,Discharge,265,2026-08-23T06:58:23.674075,Patient P0190 discharged from Department 4
+439,DISCHARGE,Discharge,266,2026-08-17T11:53:55.674097,Patient P0238 discharged from Department 3
+440,DISCHARGE,Discharge,267,2026-07-23T05:10:19.674118,Patient P0780 discharged from Department 1
+441,DISCHARGE,Discharge,268,2026-08-05T18:45:01.674135,Patient P0933 discharged from Department 2
+442,DISCHARGE,Discharge,269,2026-08-21T08:25:06.674151,Patient P0950 discharged from Department 1
+443,DISCHARGE,Discharge,270,2026-07-25T05:20:03.674167,Patient P0877 discharged from Department 4
+444,DISCHARGE,Discharge,271,2026-07-24T13:36:59.674185,Patient P0739 discharged from Department 5
+445,DISCHARGE,Discharge,272,2026-07-24T15:04:59.674205,Patient P0611 discharged from Department 5
+446,DISCHARGE,Discharge,273,2026-08-06T23:35:22.674223,Patient P0206 discharged from Department 1
+447,DISCHARGE,Discharge,274,2026-08-06T00:00:09.674239,Patient P0480 discharged from Department 3
+448,DISCHARGE,Discharge,275,2026-07-20T13:58:44.674258,Patient P0226 discharged from Department 2
+449,DISCHARGE,Discharge,276,2026-07-20T23:50:44.674276,Patient P0712 discharged from Department 3
+450,DISCHARGE,Discharge,277,2026-07-28T11:44:18.674345,Patient P0811 discharged from Department 4
+451,DISCHARGE,Discharge,278,2026-07-21T17:37:46.674363,Patient P0836 discharged from Department 3
+452,DISCHARGE,Discharge,279,2026-07-23T14:33:30.674381,Patient P0251 discharged from Department 4
+453,DISCHARGE,Discharge,280,2026-08-16T22:04:12.674399,Patient P0721 discharged from Department 1
+454,DISCHARGE,Discharge,281,2026-08-01T11:13:08.674420,Patient P0438 discharged from Department 3
+455,DISCHARGE,Discharge,282,2026-08-08T17:45:38.674438,Patient P0792 discharged from Department 4
+456,DISCHARGE,Discharge,283,2026-07-27T06:22:27.674462,Patient P0727 discharged from Department 1
+457,DISCHARGE,Discharge,284,2026-08-22T08:42:30.674482,Patient P0933 discharged from Department 5
+458,DISCHARGE,Discharge,285,2026-07-23T16:24:58.674551,Patient P0691 discharged from Department 2
+459,DISCHARGE,Discharge,286,2026-08-09T11:20:17.674583,Patient P0512 discharged from Department 3
+460,DISCHARGE,Discharge,287,2026-07-24T05:54:42.674611,Patient P0643 discharged from Department 2
+461,DISCHARGE,Discharge,288,2026-08-20T16:26:38.674629,Patient P0374 discharged from Department 1
+462,DISCHARGE,Discharge,289,2026-08-15T02:27:02.674651,Patient P0843 discharged from Department 2
+463,DISCHARGE,Discharge,290,2026-07-15T18:43:13.674673,Patient P0891 discharged from Department 1
+464,DISCHARGE,Discharge,291,2026-07-20T15:33:16.674694,Patient P0822 discharged from Department 5
+465,DISCHARGE,Discharge,292,2026-08-09T13:52:40.674718,Patient P0947 discharged from Department 4
+466,DISCHARGE,Discharge,293,2026-07-20T20:51:12.674736,Patient P0515 discharged from Department 3
+467,DISCHARGE,Discharge,294,2026-08-08T01:14:49.674757,Patient P0243 discharged from Department 5
+468,DISCHARGE,Discharge,295,2026-07-22T03:08:46.674774,Patient P0786 discharged from Department 1
+469,DISCHARGE,Discharge,296,2026-07-26T07:57:45.674790,Patient P0924 discharged from Department 3
+470,DISCHARGE,Discharge,297,2026-07-25T10:47:46.674804,Patient P0198 discharged from Department 5
+471,DISCHARGE,Discharge,298,2026-08-21T02:05:33.674825,Patient P0563 discharged from Department 2
+472,DISCHARGE,Discharge,299,2026-07-31T00:42:00.674841,Patient P0698 discharged from Department 3
+473,DISCHARGE,Discharge,300,2026-08-21T19:11:47.674862,Patient P0802 discharged from Department 2
+474,DISCHARGE,Discharge,301,2026-08-08T03:22:47.674878,Patient P0305 discharged from Department 4
+475,DISCHARGE,Discharge,302,2026-08-15T10:35:54.674896,Patient P0343 discharged from Department 2
+476,DISCHARGE,Discharge,303,2026-07-31T10:13:23.674910,Patient P0340 discharged from Department 3
+477,DISCHARGE,Discharge,304,2026-08-08T02:33:01.674926,Patient P0152 discharged from Department 5
+478,DISCHARGE,Discharge,305,2026-08-09T19:45:34.674945,Patient P0754 discharged from Department 2
+479,DISCHARGE,Discharge,306,2026-08-20T10:55:06.674961,Patient P0815 discharged from Department 2
+480,DISCHARGE,Discharge,307,2026-08-06T16:16:04.674986,Patient P0398 discharged from Department 4
+481,DISCHARGE,Discharge,308,2026-07-18T19:01:26.675008,Patient P0635 discharged from Department 4
+482,DISCHARGE,Discharge,309,2026-07-25T21:16:47.675026,Patient P0455 discharged from Department 2
+483,DISCHARGE,Discharge,310,2026-08-18T15:58:08.675045,Patient P0957 discharged from Department 5
+484,DISCHARGE,Discharge,311,2026-08-15T21:20:15.675134,Patient P0987 discharged from Department 1
+485,DISCHARGE,Discharge,312,2026-08-22T09:41:39.675162,Patient P0518 discharged from Department 4
+486,DISCHARGE,Discharge,313,2026-07-31T16:26:30.675188,Patient P0190 discharged from Department 3
+487,DISCHARGE,Discharge,314,2026-07-22T06:19:47.675207,Patient P0701 discharged from Department 3
+488,DISCHARGE,Discharge,315,2026-07-22T01:27:16.675224,Patient P0358 discharged from Department 2
+489,DISCHARGE,Discharge,316,2026-08-08T19:15:56.675239,Patient P0282 discharged from Department 3
+490,DISCHARGE,Discharge,317,2026-07-26T02:55:09.675257,Patient P0734 discharged from Department 1
+491,DISCHARGE,Discharge,318,2026-08-17T00:08:46.675271,Patient P0352 discharged from Department 4
+492,DISCHARGE,Discharge,319,2026-08-17T18:44:12.675293,Patient P0620 discharged from Department 1
+493,DISCHARGE,Discharge,320,2026-08-24T00:30:31.675310,Patient P0238 discharged from Department 4
+494,DISCHARGE,Discharge,321,2026-07-23T06:57:01.675329,Patient P0453 discharged from Department 3
+495,DISCHARGE,Discharge,322,2026-07-17T10:39:38.675345,Patient P0803 discharged from Department 4
+496,DISCHARGE,Discharge,323,2026-07-28T04:02:43.675360,Patient P0682 discharged from Department 5
+497,DISCHARGE,Discharge,324,2026-08-12T06:03:37.675441,Patient P0223 discharged from Department 3
+498,DISCHARGE,Discharge,325,2026-08-15T17:52:07.675458,Patient P0605 discharged from Department 4
+499,DISCHARGE,Discharge,326,2026-08-18T07:56:01.675477,Patient P0757 discharged from Department 4
+500,DISCHARGE,Discharge,327,2026-08-13T00:45:08.675498,Patient P0960 discharged from Department 4
+501,DISCHARGE,Discharge,328,2026-08-22T14:10:24.675519,Patient P0210 discharged from Department 1
+502,DISCHARGE,Discharge,329,2026-07-16T21:21:07.675533,Patient P0351 discharged from Department 4
+503,DISCHARGE,Discharge,330,2026-08-08T19:18:50.675552,Patient P0317 discharged from Department 4
+504,DISCHARGE,Discharge,331,2026-08-13T21:58:25.675572,Patient P0712 discharged from Department 4
+505,DISCHARGE,Discharge,332,2026-07-23T14:41:04.675590,Patient P0901 discharged from Department 2
+506,DISCHARGE,Discharge,333,2026-08-24T13:42:25.675609,Patient P0306 discharged from Department 2
+507,DISCHARGE,Discharge,334,2026-08-26T10:47:15.675621,Patient P0329 discharged from Department 2
+508,DISCHARGE,Discharge,335,2026-08-23T18:36:19.675640,Patient P0258 discharged from Department 1
+509,DISCHARGE,Discharge,336,2026-08-25T04:36:59.675660,Patient P0837 discharged from Department 4
+510,DISCHARGE,Discharge,337,2026-08-23T14:16:15.675679,Patient P0879 discharged from Department 4
+511,DISCHARGE,Discharge,338,2026-08-18T04:03:28.675700,Patient P0349 discharged from Department 1
+512,DISCHARGE,Discharge,339,2026-08-16T17:35:31.675716,Patient P0478 discharged from Department 3
+513,DISCHARGE,Discharge,340,2026-07-25T21:17:51.675730,Patient P0293 discharged from Department 5
+514,DISCHARGE,Discharge,341,2026-07-25T04:04:00.675750,Patient P0956 discharged from Department 4
+515,DISCHARGE,Discharge,342,2026-07-18T01:39:44.675769,Patient P0932 discharged from Department 4
+516,DISCHARGE,Discharge,343,2026-07-20T01:38:23.675786,Patient P0541 discharged from Department 5
+517,DISCHARGE,Discharge,344,2026-07-27T07:42:38.675807,Patient P0804 discharged from Department 3
+518,DISCHARGE,Discharge,345,2026-08-15T10:23:57.675826,Patient P0363 discharged from Department 1
+519,DISCHARGE,Discharge,346,2026-08-02T17:13:17.675841,Patient P0622 discharged from Department 2
+520,DISCHARGE,Discharge,347,2026-07-20T14:05:37.675856,Patient P0314 discharged from Department 5
+521,DISCHARGE,Discharge,348,2026-07-23T12:56:27.675872,Patient P0162 discharged from Department 5
+522,DISCHARGE,Discharge,349,2026-07-24T15:07:59.675888,Patient P0403 discharged from Department 5
+523,DISCHARGE,Discharge,350,2026-08-21T23:56:52.675907,Patient P0498 discharged from Department 5
+524,DISCHARGE,Discharge,351,2026-08-17T03:04:43.675926,Patient P0680 discharged from Department 2
+525,DISCHARGE,Discharge,352,2026-08-27T18:45:43.675947,Patient P0817 discharged from Department 3
+526,DISCHARGE,Discharge,353,2026-07-23T05:42:10.675963,Patient P0933 discharged from Department 4
+527,DISCHARGE,Discharge,354,2026-08-13T14:49:09.675976,Patient P0536 discharged from Department 3
+528,DISCHARGE,Discharge,355,2026-08-18T13:18:27.675992,Patient P0890 discharged from Department 5
+529,DISCHARGE,Discharge,356,2026-08-01T10:18:38.676012,Patient P0171 discharged from Department 4
+530,DISCHARGE,Discharge,357,2026-07-15T06:24:50.676029,Patient P0497 discharged from Department 2
+531,DISCHARGE,Discharge,358,2026-08-26T17:32:26.676046,Patient P0372 discharged from Department 1
+532,DISCHARGE,Discharge,359,2026-08-04T04:29:50.676068,Patient P0339 discharged from Department 1
+533,DISCHARGE,Discharge,360,2026-07-21T20:44:59.676085,Patient P0765 discharged from Department 1
+534,DISCHARGE,Discharge,361,2026-08-14T10:16:56.676100,Patient P0584 discharged from Department 2
+535,DISCHARGE,Discharge,362,2026-08-10T16:19:00.676117,Patient P0169 discharged from Department 5
+536,DISCHARGE,Discharge,363,2026-08-10T15:22:03.676138,Patient P0186 discharged from Department 5
+537,DISCHARGE,Discharge,364,2026-07-26T12:59:20.676158,Patient P0982 discharged from Department 5
+538,DISCHARGE,Discharge,365,2026-08-25T19:59:02.676178,Patient P0865 discharged from Department 1
+539,DISCHARGE,Discharge,366,2026-08-01T03:38:55.676197,Patient P0524 discharged from Department 4
+540,DISCHARGE,Discharge,367,2026-08-21T04:11:16.676217,Patient P0293 discharged from Department 4
+541,DISCHARGE,Discharge,368,2026-07-23T17:11:33.676239,Patient P0722 discharged from Department 3
+542,DISCHARGE,Discharge,369,2026-08-11T11:51:13.676266,Patient P0162 discharged from Department 2
+543,DISCHARGE,Discharge,370,2026-08-17T19:46:05.676289,Patient P0353 discharged from Department 1
+544,DISCHARGE,Discharge,371,2026-08-05T13:08:48.676306,Patient P0662 discharged from Department 3
+545,DISCHARGE,Discharge,372,2026-08-28T09:13:07.676324,Patient P0852 discharged from Department 3
+546,DISCHARGE,Discharge,373,2026-07-22T03:13:19.676342,Patient P0340 discharged from Department 2
+547,DISCHARGE,Discharge,374,2026-08-23T06:16:13.676357,Patient P0481 discharged from Department 1
+548,DISCHARGE,Discharge,375,2026-08-23T22:26:56.676374,Patient P0740 discharged from Department 5
+549,DISCHARGE,Discharge,376,2026-08-01T09:41:49.676396,Patient P0463 discharged from Department 5
+550,DISCHARGE,Discharge,377,2026-08-02T13:53:57.676412,Patient P0185 discharged from Department 2
+551,DISCHARGE,Discharge,378,2026-08-18T16:55:15.676431,Patient P0642 discharged from Department 4
+552,DISCHARGE,Discharge,379,2026-08-15T05:19:43.676445,Patient P0688 discharged from Department 5
+553,DISCHARGE,Discharge,380,2026-07-19T20:21:56.676461,Patient P0693 discharged from Department 3
+554,DISCHARGE,Discharge,381,2026-07-29T16:33:58.676480,Patient P0757 discharged from Department 3
+555,DISCHARGE,Discharge,382,2026-08-19T21:13:40.676495,Patient P0704 discharged from Department 1
+556,DISCHARGE,Discharge,383,2026-07-17T20:37:05.676508,Patient P0465 discharged from Department 3
+557,DISCHARGE,Discharge,384,2026-07-16T10:04:10.676527,Patient P0702 discharged from Department 3
+558,DISCHARGE,Discharge,385,2026-07-24T23:57:37.676543,Patient P0595 discharged from Department 5
+559,DISCHARGE,Discharge,386,2026-08-08T08:41:37.676561,Patient P0508 discharged from Department 5
+560,DISCHARGE,Discharge,387,2026-08-22T15:03:33.676579,Patient P0461 discharged from Department 1
+561,DISCHARGE,Discharge,388,2026-08-16T17:57:53.676600,Patient P0512 discharged from Department 2
+562,DISCHARGE,Discharge,389,2026-08-04T00:44:28.676619,Patient P0189 discharged from Department 4
+563,DISCHARGE,Discharge,390,2026-08-02T14:41:09.676639,Patient P0839 discharged from Department 3
+564,DISCHARGE,Discharge,391,2026-08-20T05:09:59.676656,Patient P0805 discharged from Department 2
+565,DISCHARGE,Discharge,392,2026-08-20T13:58:55.676676,Patient P0435 discharged from Department 1
+566,DISCHARGE,Discharge,393,2026-08-07T04:16:54.676692,Patient P0458 discharged from Department 2
+567,DISCHARGE,Discharge,394,2026-08-18T03:35:55.676706,Patient P0750 discharged from Department 1
+568,DISCHARGE,Discharge,395,2026-08-14T18:00:41.676725,Patient P0314 discharged from Department 5
+569,DISCHARGE,Discharge,396,2026-08-04T10:11:06.676740,Patient P0277 discharged from Department 1
+570,DISCHARGE,Discharge,397,2026-08-11T10:53:51.676758,Patient P0319 discharged from Department 5
+571,DISCHARGE,Discharge,398,2026-08-21T20:20:03.676775,Patient P0677 discharged from Department 3
+572,DISCHARGE,Discharge,399,2026-08-09T14:29:22.676794,Patient P0279 discharged from Department 2
+573,DISCHARGE,Discharge,400,2026-08-16T01:20:18.676813,Patient P0937 discharged from Department 5
+574,DISCHARGE,Discharge,401,2026-08-10T01:47:26.676831,Patient P0297 discharged from Department 4
+575,DISCHARGE,Discharge,402,2026-07-20T03:05:01.676854,Patient P0580 discharged from Department 5
+576,DISCHARGE,Discharge,403,2026-08-14T04:27:40.676878,Patient P0685 discharged from Department 4
+577,DISCHARGE,Discharge,404,2026-08-13T09:48:57.676895,Patient P0769 discharged from Department 2
+578,DISCHARGE,Discharge,405,2026-08-11T16:07:53.676912,Patient P0824 discharged from Department 4
+579,DISCHARGE,Discharge,406,2026-08-23T17:03:06.676927,Patient P0531 discharged from Department 5
+580,DISCHARGE,Discharge,407,2026-08-02T21:02:14.676943,Patient P0174 discharged from Department 5
+581,DISCHARGE,Discharge,408,2026-07-16T23:14:50.676960,Patient P0204 discharged from Department 1
+582,DISCHARGE,Discharge,409,2026-08-20T07:51:05.676979,Patient P0946 discharged from Department 2
+583,DISCHARGE,Discharge,410,2026-08-06T01:54:17.676998,Patient P0177 discharged from Department 5
+584,DISCHARGE,Discharge,411,2026-08-20T17:26:20.677015,Patient P0434 discharged from Department 2
+585,DISCHARGE,Discharge,412,2026-08-26T15:39:40.677034,Patient P0568 discharged from Department 1
+586,DISCHARGE,Discharge,413,2026-08-24T05:56:21.677053,Patient P0756 discharged from Department 3
+587,DISCHARGE,Discharge,414,2026-08-10T16:25:45.677073,Patient P0862 discharged from Department 5
+588,DISCHARGE,Discharge,415,2026-08-07T17:23:46.677089,Patient P0317 discharged from Department 1
+589,DISCHARGE,Discharge,416,2026-07-24T23:34:02.677106,Patient P0839 discharged from Department 3
+590,DISCHARGE,Discharge,417,2026-08-20T10:21:30.677122,Patient P0568 discharged from Department 4
+591,DISCHARGE,Discharge,418,2026-07-20T18:42:06.677140,Patient P0223 discharged from Department 1
+592,DISCHARGE,Discharge,419,2026-08-27T13:15:32.677156,Patient P0463 discharged from Department 4
+593,DISCHARGE,Discharge,420,2026-07-27T03:25:35.677177,Patient P0771 discharged from Department 5
+594,DISCHARGE,Discharge,421,2026-08-08T10:12:29.677199,Patient P0893 discharged from Department 1
+595,DISCHARGE,Discharge,422,2026-08-17T22:52:36.677221,Patient P0548 discharged from Department 1
+596,DISCHARGE,Discharge,423,2026-08-14T21:00:19.677240,Patient P0306 discharged from Department 4
+597,DISCHARGE,Discharge,424,2026-07-26T08:03:39.677255,Patient P0178 discharged from Department 5
+598,DISCHARGE,Discharge,425,2026-08-28T23:29:43.677278,Patient P0845 discharged from Department 1
+599,DISCHARGE,Discharge,426,2026-08-04T08:57:28.677299,Patient P0542 discharged from Department 5
+600,DISCHARGE,Discharge,427,2026-07-21T20:43:56.677317,Patient P0772 discharged from Department 3
+601,DISCHARGE,Discharge,428,2026-07-20T20:44:06.677335,Patient P0243 discharged from Department 3
+602,DISCHARGE,Discharge,429,2026-08-20T00:43:25.677354,Patient P0249 discharged from Department 2
+603,DISCHARGE,Discharge,430,2026-08-03T08:14:57.677374,Patient P0196 discharged from Department 3
+604,DISCHARGE,Discharge,431,2026-08-11T01:57:46.677394,Patient P0179 discharged from Department 5
+605,DISCHARGE,Discharge,432,2026-07-19T20:12:59.677415,Patient P0750 discharged from Department 3
+606,DISCHARGE,Discharge,433,2026-08-03T12:51:14.677433,Patient P0759 discharged from Department 1
+607,DISCHARGE,Discharge,434,2026-08-11T08:21:47.677446,Patient P0875 discharged from Department 2
+608,DISCHARGE,Discharge,435,2026-07-19T15:21:02.677466,Patient P0419 discharged from Department 1
+609,DISCHARGE,Discharge,436,2026-08-05T13:58:32.677485,Patient P0345 discharged from Department 5
+610,DISCHARGE,Discharge,437,2026-08-11T21:03:51.677501,Patient P0900 discharged from Department 1
+611,DISCHARGE,Discharge,438,2026-08-21T21:39:35.677515,Patient P0826 discharged from Department 3
+612,DISCHARGE,Discharge,439,2026-07-27T01:04:34.677535,Patient P0865 discharged from Department 3
+613,DISCHARGE,Discharge,440,2026-07-22T18:12:10.677554,Patient P0349 discharged from Department 5
+614,DISCHARGE,Discharge,441,2026-07-19T21:57:40.677573,Patient P0627 discharged from Department 1
+615,DISCHARGE,Discharge,442,2026-08-12T20:24:43.677588,Patient P0623 discharged from Department 5
+616,DISCHARGE,Discharge,443,2026-08-10T01:46:26.677606,Patient P0333 discharged from Department 4
+617,DISCHARGE,Discharge,444,2026-07-25T08:57:53.677622,Patient P0837 discharged from Department 4
+618,DISCHARGE,Discharge,445,2026-08-24T01:42:36.677641,Patient P0768 discharged from Department 3
+619,DISCHARGE,Discharge,446,2026-07-21T03:11:17.677658,Patient P0267 discharged from Department 1
+620,DISCHARGE,Discharge,447,2026-08-21T11:25:14.677674,Patient P0925 discharged from Department 5
+621,DISCHARGE,Discharge,448,2026-07-28T07:11:36.677688,Patient P0731 discharged from Department 5
+622,DISCHARGE,Discharge,449,2026-07-21T13:24:16.677704,Patient P0367 discharged from Department 1
+623,DISCHARGE,Discharge,40,2026-08-26 11:34:46.019955,Patient P0040 officially discharged. Type: Routine Clinical Discharge
+624,BED_STATUS_CHANGE,Bed,3,2026-08-26 11:34:54.284711,Bed A (Room R102) status transitioned from Cleaning to Available
