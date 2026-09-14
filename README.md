@@ -281,5 +281,18 @@ APP/
 | **Cascading Filter Engine** | Change Department in Global Filter Bar | Filters down available doctors and diagnoses dynamically across all modules. |
 | **Geographic Mapping** | Open Geographic Coverage page | Interactive map renders Indian state bubble density markers with patient counts. |
 | **Audit Log Ledger** | Open Audit Event Log page | Displays chronological event records with category badges and timestamps. |
-```
 
+
+
+## Live Production Deployment
+
+The platform is deployed and publicly accessible on the cloud:
+
+| Service | Host Platform | Production URL |
+| :--- | :--- | :--- |
+| **Interactive Web Application** | Vercel | [https://mediops-platform.vercel.app](https://mediops-platform.vercel.app) |
+| **Cloud API & Relational Database** | Render | [https://mediops-backend.onrender.com](https://mediops-backend.onrender.com) |
+| **Interactive Swagger API Docs** | Render | [https://mediops-backend.onrender.com/docs](https://mediops-backend.onrender.com/docs) |
+
+> **Note on Free-Tier Cloud Hosting:**
+> The backend on Render spins down automatically after 15 minutes of inactivity. On the first visit, please allow 30–50 seconds for the backend instance to spin up, after which all global filters, live blueprints, and analytics queries will respond instantly.
