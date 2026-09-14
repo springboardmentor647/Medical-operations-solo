@@ -3,7 +3,8 @@ import sqlite3
 import pandas as pd
 
 def seed():
-    DB_DIR = r"D:\INTERNSHIP\7TH SEM\INFOSYS SPRINGBOARD\APP\data"
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    DB_DIR = os.path.join(BASE_DIR, "data")
     PROCESSED_DIR = os.path.join(DB_DIR, "processed")
     DB_PATH = os.path.join(DB_DIR, "hospital_blueprint.db")
     
