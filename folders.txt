@@ -1,0 +1,38 @@
+APP/
+├── backend/
+│   ├── main.py                     # FastAPI routes, CORS middleware, and API endpoints
+│   ├── database.py                 # SQLAlchemy schema, relationships, and SQL analytical views
+│   ├── models.py                   # Pydantic schemas (Data Transfer Objects & KPI validation)
+│   ├── services/
+│   │   ├── analytics_engine.py     # Aggregated analytics, SQL view readers, and risk logic
+│   │   └── event_handler.py        # Automated transactional audit logging service
+│   ├── scripts/
+│   │   └── seed_data.py            # Master import script: loads operational CSV source files into SQLite
+│   └── inspect_db.py               # Database inspection and schema verification utility
+├── data/
+│   ├── hospital_blueprint.db       # Primary SQLite operational database
+│   └── processed/                  # Standardized operational CSV records
+├── frontend/
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── main.jsx                    # React root application bootstrap
+│       ├── App.jsx                     # Global router and structural layout shell
+│       ├── index.css                   # Base CSS and Tailwind CSS directives
+│       ├── context/
+│       │   └── HospitalContext.jsx     # Global cascading filter state and context provider
+│       ├── components/
+│       │   ├── Sidebar.jsx             # Navigation sidebar
+│       │   └── GlobalFilterBar.jsx     # Multi-dimensional cascading filter bar
+│       └── pages/
+│           ├── Dashboard.jsx           # Executive command center overview
+│           ├── FloorManagement.jsx     # Floor summaries and room type definitions table
+│           ├── Blueprint.jsx           # Interactive floor map and bed management drawer
+│           ├── Analytics.jsx           # Operational analytics, flow funnels, and workforce workload
+│           ├── Turnover.jsx            # Revenue, financial turnover, and fee catalog
+│           ├── RiskAlerts.jsx          # Threshold violations and bottleneck alerts
+│           ├── OperationalEvents.jsx   # Immutable audit transaction ledger
+│           └── GeoMap.jsx              # Geographic patient distribution map
+├── .gitignore
+└── README.md
